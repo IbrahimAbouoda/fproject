@@ -15,12 +15,13 @@ class _HomeDistState extends State<HomeDist> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
-
         backgroundColor: Colors.white,
-
         title: Icon(Icons.line_weight_sharp),
-
-        actions:[ Row(children: [Icon(Icons.search_rounded),Icon(Icons.notifications)],)],
+        actions: [
+          Row(
+            children: [Icon(Icons.search_rounded), Icon(Icons.notifications)],
+          )
+        ],
       ),
       body: Container(
         width: double.infinity,
@@ -29,15 +30,16 @@ class _HomeDistState extends State<HomeDist> {
             "المنتجات",
             style: GeneralStyle.tiltelStyle,
           ),
-          SizedBox(height: 10,),
-
+          SizedBox(
+            height: 10,
+          ),
           Expanded(
             flex: 1,
-
-            child: ListView.builder(itemBuilder: (context, index) {
-              return  BoxContList();
-            },
-             itemCount: 15,
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return BoxContList();
+              },
+              itemCount: 15,
             ),
           )
         ]),
@@ -45,34 +47,34 @@ class _HomeDistState extends State<HomeDist> {
     );
   }
 
-
-
-
   Container BoxContList() {
     return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black38,width: 1.5)
-      ),
-                  width: 350,
-
-                  child: Row(
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black38, width: 1.5)),
+        width: 350,
+        child: Row(
+          children: [
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
                     children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Row(children: [
-                              Icon(Icons.delete,),Icon(Icons.note_alt_outlined)
-                            ],),
-                            Text("15"),
-                            Text("\$366"),
-                            Text("الفضي"),
-                            Text("فستان"),
-                            Image.asset("assets/images/fustan.png")
-                          ],
-                        ),
+                      Icon(
+                        Icons.delete,
                       ),
+                      Icon(Icons.note_alt_outlined)
                     ],
-                  ));
+                  ),
+                  Text("15"),
+                  Text("\$366"),
+                  Text("الفضي"),
+                  Text("فستان"),
+                  Image.asset("assets/images/fustan.png")
+                ],
+              ),
+            ),
+          ],
+        ));
   }
 }

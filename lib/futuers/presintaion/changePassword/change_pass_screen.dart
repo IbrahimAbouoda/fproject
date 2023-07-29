@@ -17,12 +17,12 @@ class _ChangePassState extends State<ChangePass> {
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
-            Expanded(flex: 1, child: Image.asset("assets/images/changepass.png")),
+            Expanded(
+                flex: 1, child: Image.asset("assets/images/changepass.png")),
             Expanded(
                 flex: 1,
                 child: Column(
                   children: [
-
                     TextFormField(
                       controller: pass,
                       decoration: InputDecoration(
@@ -31,7 +31,8 @@ class _ChangePassState extends State<ChangePass> {
                             borderSide: BorderSide(color: Colors.white10)),
                         hintText: "البريد الاكتروني",
                       ),
-                    ),TextFormField(
+                    ),
+                    TextFormField(
                       controller: pass,
                       decoration: InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
@@ -39,7 +40,8 @@ class _ChangePassState extends State<ChangePass> {
                             borderSide: BorderSide(color: Colors.white10)),
                         hintText: "كلمة المرور",
                       ),
-                    ),TextFormField(
+                    ),
+                    TextFormField(
                       controller: pass,
                       decoration: InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
@@ -57,14 +59,13 @@ class _ChangePassState extends State<ChangePass> {
                         },
                         style: ButtonStyle(
                             backgroundColor:
-                            MaterialStateProperty.all(Colors.blue)),
+                                MaterialStateProperty.all(Colors.blue)),
                         child: const Text(
                           "انهاء",
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
-
                   ],
                 )),
           ],

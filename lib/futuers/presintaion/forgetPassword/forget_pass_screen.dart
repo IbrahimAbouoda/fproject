@@ -10,8 +10,7 @@ class Forget extends StatefulWidget {
 class _ForgetState extends State<Forget> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController email = TextEditingController();
-    TextEditingController pass = TextEditingController();
+    var pass = TextEditingController();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -22,29 +21,29 @@ class _ForgetState extends State<Forget> {
                 flex: 1,
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       "نسيان كلمة المرور",
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    Text(
+                    const Text(
                         "لاتقلق ! يحدث ذلكز الرجاء إدخال البريد الاكتروني لفحصه والتاكد منه"),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
                       controller: pass,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white10)),
                         hintText: "كلمة المرور",
                       ),
                     ),
-                    SizedBox(height: 100),
+                    const SizedBox(height: 100),
                     SizedBox(
                       width: 150,
                       child: TextButton(
@@ -60,7 +59,6 @@ class _ForgetState extends State<Forget> {
                         ),
                       ),
                     ),
-
                   ],
                 )),
           ],

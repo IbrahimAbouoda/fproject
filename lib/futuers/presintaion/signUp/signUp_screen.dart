@@ -87,8 +87,8 @@ class _SignUpState extends State<SignUp> {
                         children: [
                           Expanded(
                             child: ListTile(
-
-                              leading: Checkbox(value: true, onChanged: (val) {}),
+                              leading:
+                                  Checkbox(value: true, onChanged: (val) {}),
                               trailing: Text("Rememper Her"),
                             ),
                           ),
@@ -98,19 +98,19 @@ class _SignUpState extends State<SignUp> {
                           )
                         ],
                       ),
-
                     ),
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     SizedBox(
                       width: 150,
                       child: TextButton(
                         onPressed: () {
-                          setState(() {
-
-                          });
+                          setState(() {});
                         },
                         style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.blue)),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.blue)),
                         child: const Text(
                           "متابعة",
                           style: TextStyle(color: Colors.white),
@@ -119,13 +119,10 @@ class _SignUpState extends State<SignUp> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("سجل الان?"),
-                        Text("عضو فعلا")
-                      ],)
+                      children: [Text("سجل الان?"), Text("عضو فعلا")],
+                    )
                   ],
                 )),
-
           ],
         ),
       ),

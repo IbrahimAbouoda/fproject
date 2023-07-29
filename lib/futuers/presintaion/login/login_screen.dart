@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets.dart';
+
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -51,8 +53,8 @@ class _LoginState extends State<Login> {
                         children: [
                           Expanded(
                             child: ListTile(
-
-                              leading: Checkbox(value: true, onChanged: (val) {}),
+                              leading:
+                                  Checkbox(value: true, onChanged: (val) {}),
                               trailing: Text("Rememper Her"),
                             ),
                           ),
@@ -62,34 +64,19 @@ class _LoginState extends State<Login> {
                           )
                         ],
                       ),
-
                     ),
-                    SizedBox(height: 30,),
                     SizedBox(
-                      width: 150,
-                      child: TextButton(
-                        onPressed: () {
-                          setState(() {
-
-                          });
-                        },
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.blue)),
-                        child: const Text(
-                          "متابعة",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
+                      height: 30,
+                    ),
+                    CustomButton(
+                      text: "متابعة",
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                      Text("سجل الان?"),
-                      Text("عضو جديد")
-                    ],)
+                      children: [Text("سجل الان?"), Text("عضو جديد")],
+                    )
                   ],
                 )),
-
           ],
         ),
       ),

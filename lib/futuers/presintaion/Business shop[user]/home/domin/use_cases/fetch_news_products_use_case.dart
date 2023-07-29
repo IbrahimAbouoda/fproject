@@ -5,10 +5,10 @@ import '../../../../../../core/errors/failuer.dart';
 import '../../../../../../core/use_case/use_case.dart';
 import '../entitis/product_entity.dart';
 
-class FetchProductsUseCase extends UseCase<List<ProductEntity>, void> {
+class FetchNewsProductsUseCase extends UseCase<List<ProductEntity>, void> {
   final HomeRepo homeRepo;
 
-  FetchProductsUseCase(this.homeRepo);
+  FetchNewsProductsUseCase(this.homeRepo);
 
   @override
   Future<Either<Failuer, List<ProductEntity>>> call([void parameter]) async {

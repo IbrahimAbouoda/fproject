@@ -1,9 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 
 class Defin1 extends StatefulWidget {
-    Defin1({Key? key}) : super(key: key);
+  Defin1({Key? key}) : super(key: key);
 
   @override
   State<Defin1> createState() => _Defin1State();
@@ -16,18 +14,15 @@ class _Defin1State extends State<Defin1> {
     "assets/images/defin1.png"
   ];
 
-  int index1=0;
-  int count =0;
+  int index1 = 0;
+  int count = 0;
 
-  prss (){
-    index1=count;
+  prss() {
+    index1 = count;
   }
 
   @override
   Widget build(BuildContext context) {
-
-
-
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(10),
@@ -41,17 +36,13 @@ class _Defin1State extends State<Defin1> {
               height: 500,
               child: PageView.builder(
                 itemBuilder: (context, index) {
-                  index1=index;
+                  index1 = index;
                   return Container(
                       margin: const EdgeInsets.symmetric(
                         horizontal: 10.0,
-
                       ),
-
                       child: Image.asset(image[index1]));
-
                 },
-
                 controller: PageController(
                   initialPage: 1,
                   viewportFraction: 0.8,
@@ -81,14 +72,11 @@ class _Defin1State extends State<Defin1> {
                   width: 10,
                   height: 10,
                   decoration: BoxDecoration(
-                    color: index1 ==0 ? Colors.black : Colors.transparent,
+                    color: index1 == 0 ? Colors.black : Colors.transparent,
                     borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-                    border: Border.all(
-                      color: Colors.black),
-
-                    ),
+                    border: Border.all(color: Colors.black),
                   ),
-
+                ),
                 const SizedBox(
                   width: 5,
                 ),
@@ -96,11 +84,10 @@ class _Defin1State extends State<Defin1> {
                   width: 10,
                   height: 10,
                   decoration: BoxDecoration(
-                    color: index1 ==0 ? Colors.black : Colors.transparent,
+                    color: index1 == 0 ? Colors.black : Colors.transparent,
                     borderRadius: const BorderRadius.all(Radius.circular(50.0)),
                     border: Border.all(
                       color: Colors.black,
-
                     ),
                   ),
                 ),
@@ -111,11 +98,10 @@ class _Defin1State extends State<Defin1> {
                   width: 10,
                   height: 10,
                   decoration: BoxDecoration(
-                    color: index1 ==0 ? Colors.black : Colors.transparent,
+                    color: index1 == 0 ? Colors.black : Colors.transparent,
                     borderRadius: const BorderRadius.all(Radius.circular(50.0)),
                     border: Border.all(
                       color: Colors.black,
-
                     ),
                   ),
                 ),
@@ -129,7 +115,7 @@ class _Defin1State extends State<Defin1> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    count ++;
+                    count++;
                     prss();
                   });
                 },

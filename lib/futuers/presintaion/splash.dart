@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import 'home/home_screen.dart';
+import 'Business shop[user]/home/presintation/home_screen.dart';
 
 class Spalah extends StatefulWidget {
   const Spalah({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class Spalah extends StatefulWidget {
   State<Spalah> createState() => _SpalahState();
 }
 
-class _SpalahState extends State<Spalah>with SingleTickerProviderStateMixin {
+class _SpalahState extends State<Spalah> with SingleTickerProviderStateMixin {
   AnimationController? _controller;
   Animation<double>? _animation;
   @override
@@ -30,12 +31,11 @@ class _SpalahState extends State<Spalah>with SingleTickerProviderStateMixin {
     // After the animation completes, navigate to the next screen (e.g., home screen)
     Timer(Duration(seconds: 4), () {
       // Replace 'HomeScreen()' with the actual widget representing your home screen.
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
-      );
+
+      context.go('/AddProduct2');
     });
   }
+
   @override
   void dispose() {
     _controller!.dispose();
@@ -45,12 +45,14 @@ class _SpalahState extends State<Spalah>with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Change to your preferred background color
+      backgroundColor:
+          Colors.white, // Change to your preferred background color
       body: Center(
         child: ScaleTransition(
-          scale: _animation!,
-          child: Image.asset("assets/images/Logo.png") // Replace with your logo widget
-        ),
+            scale: _animation!,
+            child: Image.asset(
+                "assets/images/Logo.png") // Replace with your logo widget
+            ),
       ),
     );
   }

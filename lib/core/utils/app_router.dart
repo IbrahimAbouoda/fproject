@@ -1,7 +1,7 @@
 import 'package:fproject/futuers/presintaion/Bussiness%20distributor%5Badmin%5D/add%20products/add_produc_screen2.dart';
 import 'package:fproject/futuers/presintaion/Bussiness%20distributor%5Badmin%5D/add%20store/add_store_screen.dart';
 import 'package:fproject/futuers/presintaion/changePassword/change_pass_screen.dart';
-import 'package:fproject/futuers/presintaion/Business%20shop%5Buser%5D/home/home_screen.dart';
+import 'package:fproject/futuers/presintaion/Business%20shop%5Buser%5D/home/presintation/home_screen.dart';
 import 'package:fproject/futuers/presintaion/splash.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,57 +12,63 @@ import '../../futuers/presintaion/login/login_screen.dart';
 import '../../futuers/presintaion/signUp/signUp_screen.dart';
 
 abstract class AppRouter {
-
   static final GoRouter router = GoRouter(routes: <RouteBase>[
     GoRoute(
         path: '/',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const Spalah();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const Spalah();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/login',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const Login();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/signUp',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const SignUp();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/changePass',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const ChangePass();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/forget',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const Forget();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/home',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const HomeScreen();
         }),
-
 
     //----------------------------------
 
     GoRoute(
         path: '/AddStore',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const AddStore();
-        })
-    ,GoRoute(
+        }),
+    GoRoute(
         path: '/homeDist',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const HomeDist();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/AddProduct1',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const AddProduct1();
-        }),GoRoute(
+        }),
+    GoRoute(
         path: '/AddProduct2',
-        builder: ( context,  state) {
+        builder: (context, state) {
           return const AddProduct2();
         }),
   ]);
