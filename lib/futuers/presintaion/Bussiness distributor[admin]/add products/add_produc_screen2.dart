@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/core/utils/general_style.dart';
 
 import '../../widgets.dart';
 
@@ -16,23 +15,23 @@ class AddProduct1 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 7,
             ),
             Container(
               alignment: Alignment.center,
-              child: Text(
-                "صورة",
-                textAlign: TextAlign.center,
-              ),
               width: 150,
               height: 150,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Color(0xffF3F3F3),
+                color: const Color(0xffF3F3F3),
+              ),
+              child: const Text(
+                "صورة",
+                textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -45,11 +44,11 @@ class AddProduct1 extends StatelessWidget {
                 BoxImageCont(),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             dropdownBox(300, "الشركة المصنعة"),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -59,10 +58,10 @@ class AddProduct1 extends StatelessWidget {
                 dropdownBox(100, "فئات الظهور"),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            CustomButton(
+            const CustomButton(
               text: "دخول",
             ),
           ],
@@ -75,19 +74,19 @@ class AddProduct1 extends StatelessWidget {
     return Column(
       children: [
         Container(
-            margin: EdgeInsets.only(right: 20),
+            margin: const EdgeInsets.only(right: 20),
             alignment: Alignment.centerRight,
-            child: Text("$tex", textAlign: TextAlign.right)),
+            child: Text(tex, textAlign: TextAlign.right)),
         Container(
           alignment: Alignment.centerLeft,
-          child: Icon(Icons.arrow_drop_down),
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           width: i,
           height: 60,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Color(0xffF3F3F3),
+            color: const Color(0xffF3F3F3),
           ),
+          child: const Icon(Icons.arrow_drop_down),
         ),
       ],
     );
@@ -95,18 +94,18 @@ class AddProduct1 extends StatelessWidget {
 
   Container BoxImageCont() {
     return Container(
-      padding: EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.only(right: 10),
       alignment: Alignment.center,
-      child: Text(
-        "صورة",
-        textAlign: TextAlign.center,
-      ),
       width: 50,
       height: 50,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black38),
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xffF3F3F3),
+        color: const Color(0xffF3F3F3),
+      ),
+      child: const Text(
+        "صورة",
+        textAlign: TextAlign.center,
       ),
     );
   }
