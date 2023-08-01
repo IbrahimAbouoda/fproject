@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/core/utils/general_style.dart';
 
 import '../../widgets.dart';
 
@@ -93,6 +92,7 @@ class AddProduct2 extends StatelessWidget {
     );
   }
 
+  // ignore: non_constant_identifier_names
   Container BoxImageCont() {
     return Container(
       padding: const EdgeInsets.only(right: 10),
