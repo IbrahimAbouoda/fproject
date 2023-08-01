@@ -23,7 +23,7 @@ class HmoeRemoteDataSourceImpl extends HomeRemoteDataSource {
      List<ProductEntity> products = [];
     
     for (var productsMap in data['items']) {
-      products.add(ProductModel.fromJson(productsMap));
+      products.add(ProductModel.fromJson(productsMap) as ProductEntity);
     
        
     }

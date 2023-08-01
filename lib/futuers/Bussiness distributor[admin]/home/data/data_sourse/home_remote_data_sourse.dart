@@ -1,9 +1,9 @@
-import 'package:fproject/core/utils/api_sevice.dart';
-import 'package:fproject/core/utils/constant.dart';
-import 'package:hive/hive.dart';
-import '../../../../core/functions/save_products.dart';
-import '../../domin/entitis/product_entity.dart';
-import '../models/product_model/product_model.dart';
+
+import '../../../../../core/functions/save_products.dart';
+import '../../../../../core/utils/api_sevice.dart';
+import '../../../../../core/utils/constant.dart';
+import '../../../../home/data/models/product_model/product_model.dart';
+import '../../../../home/domin/entitis/product_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<ProductEntity>> fetchFeaturedProduct();

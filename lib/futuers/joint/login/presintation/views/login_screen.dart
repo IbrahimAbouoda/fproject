@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../widgets.dart';
+import '../../../../widgets.dart';
+
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -26,19 +27,19 @@ class _LoginState extends State<Login> {
                   children: [
                     TextFormField(
                       controller: email,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white10)),
                         hintText: "البريد الاكتروني",
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
                       controller: pass,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white10)),
@@ -55,23 +56,23 @@ class _LoginState extends State<Login> {
                             child: ListTile(
                               leading:
                                   Checkbox(value: true, onChanged: (val) {}),
-                              trailing: Text("Rememper Her"),
+                              trailing: const Text("Rememper Her"),
                             ),
                           ),
                           TextButton(
-                            child: Text("ForgetPassword?"),
+                            child: const Text("ForgetPassword?"),
                             onPressed: () {},
                           )
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    CustomButton(
+                    const CustomButton(
                       text: "متابعة",
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [Text("سجل الان?"), Text("عضو جديد")],
                     )

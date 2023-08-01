@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart' show HiveField, HiveType;
+import 'package:hive/hive.dart' show BinaryReader, BinaryWriter, HiveField, HiveType, TypeAdapter;
 part 'product_entity.g.dart';
 @HiveType(typeId: 0)
 class ProductEntity {

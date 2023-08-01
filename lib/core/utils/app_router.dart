@@ -1,15 +1,17 @@
-import 'package:fproject/futuers/presintaion/Bussiness%20distributor%5Badmin%5D/add%20products/add_produc_screen2.dart';
-import 'package:fproject/futuers/presintaion/Bussiness%20distributor%5Badmin%5D/add%20store/add_store_screen.dart';
-import 'package:fproject/futuers/presintaion/changePassword/change_pass_screen.dart';
-import 'package:fproject/futuers/presintaion/Business%20shop%5Buser%5D/home/presintation/home_screen.dart';
-import 'package:fproject/futuers/presintaion/splash.dart';
+
+
 import 'package:go_router/go_router.dart';
 
-import '../../futuers/presintaion/Bussiness distributor[admin]/add products/add_product_screen1.dart';
-import '../../futuers/presintaion/Bussiness distributor[admin]/home/home_distrbute_screen.dart';
-import '../../futuers/presintaion/forgetPassword/forget_pass_screen.dart';
-import '../../futuers/presintaion/login/login_screen.dart';
-import '../../futuers/presintaion/signUp/signUp_screen.dart';
+import '../../futuers/Bussiness distributor[admin]/add products/add_produc_screen2.dart';
+import '../../futuers/Bussiness distributor[admin]/add products/add_product_screen1.dart';
+import '../../futuers/Bussiness distributor[admin]/add store/add_store_screen.dart';
+import '../../futuers/Bussiness distributor[admin]/home/presintation/views/home_distrbute_screen.dart';
+import '../../futuers/forgetPassword/presintation/views/forget_pass_screen.dart';
+import '../../futuers/home/presintation/views/home_screen.dart';
+import '../../futuers/joint/changePassword/presintation/views/change_pass_screen.dart';
+import '../../futuers/joint/login/presintation/views/login_screen.dart';
+import '../../futuers/joint/signUp/presintation/views/signUp_screen.dart';
+import '../../futuers/splash.dart';
 
 abstract class AppRouter {
   static final GoRouter router = GoRouter(routes: <RouteBase>[

@@ -10,7 +10,6 @@ class ChangePass extends StatefulWidget {
 class _ChangePassState extends State<ChangePass> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController email = TextEditingController();
     TextEditingController pass = TextEditingController();
     return Scaffold(
       body: Padding(
