@@ -1,18 +1,21 @@
-import 'package:hive/hive.dart' show BinaryReader, BinaryWriter, HiveField, HiveType, TypeAdapter;
+import 'package:hive/hive.dart'
+    show BinaryReader, BinaryWriter, HiveField, HiveType, TypeAdapter;
+
 part 'product_entity.g.dart';
+
 @HiveType(typeId: 0)
 class ProductEntity {
   @HiveField(0)
   final String productId;
-@HiveField(1)
+  @HiveField(1)
   final String? image;
-@HiveField(2)
+  @HiveField(2)
   final String name;
-@HiveField(3)
+  @HiveField(3)
   final String type;
-@HiveField(4)
+  @HiveField(4)
   final num? price;
-@HiveField(5)
+  @HiveField(5)
   final num? volume;
 
   ProductEntity(

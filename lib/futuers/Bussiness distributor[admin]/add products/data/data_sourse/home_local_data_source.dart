@@ -1,4 +1,3 @@
-
 import '../../../home/domin/entitis/product_entity.dart';
 
 abstract class HomeLocalDataSource {
@@ -8,8 +7,6 @@ abstract class HomeLocalDataSource {
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
   @override
   List<ProductEntity> fetchProducts() {
-    
     throw UnimplementedError();
   }
-
 }

@@ -63,6 +63,7 @@ class AddProduct1 extends StatelessWidget {
             ),
             const CustomButton(
               text: "دخول",
+              color: Colors.blue,
             ),
           ],
         ),

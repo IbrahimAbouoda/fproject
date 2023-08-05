@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatefulWidget {
-  const CustomButton({super.key, required this.text});
+  const CustomButton(
+      {super.key, required this.text, this.onPressed, required this.color});
 
   final String text;
+  final Function()? onPressed;
+  final Color color;
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -13,14 +16,14 @@ class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 150,
+      width: 250,
       child: TextButton(
-        onPressed: () {},
+        onPressed: widget.onPressed,
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.blue)),
+            backgroundColor: MaterialStateProperty.all(widget.color)),
         child: Text(
           widget.text,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white, fontSize: 15),
         ),
       ),
     );

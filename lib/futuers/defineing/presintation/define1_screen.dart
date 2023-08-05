@@ -31,7 +31,7 @@ class _Defin1State extends State<Defin1> {
             const SizedBox(
               height: 30,
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 500,
               child: PageView.builder(

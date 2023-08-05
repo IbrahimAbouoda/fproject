@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../widgets.dart';
-
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -61,7 +61,9 @@ class _LoginState extends State<Login> {
                           ),
                           TextButton(
                             child: const Text("ForgetPassword?"),
-                            onPressed: () {},
+                            onPressed: () {
+                              context.go("/forget");
+                            },
                           )
                         ],
                       ),
@@ -69,12 +71,22 @@ class _LoginState extends State<Login> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const CustomButton(
+                    CustomButton(
                       text: "متابعة",
+                      onPressed: () => context.go("/home"),
+                      color: Colors.blue,
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text("سجل الان?"), Text("عضو جديد")],
+                      children: [
+                        TextButton(
+                          child: const Text("سجل الان?"),
+                          onPressed: () {
+                            context.go("/signUp");
+                          },
+                        ),
+                        const Text("عضو جديد")
+                      ],
                     )
                   ],
                 )),

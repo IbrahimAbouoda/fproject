@@ -10,7 +10,9 @@ abstract class HomeRemoteDataSource {
 
 class HmoeRemoteDataSourceImpl extends HomeRemoteDataSource {
   ApiServise apiServise;
+
   HmoeRemoteDataSourceImpl(this.apiServise);
+
   @override
   Future<List<ProductEntity>> fetchFeaturedProduct() async {
     var data = await apiServise.get(

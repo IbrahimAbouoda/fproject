@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fproject/futuers/widgets.dart';
+import 'package:go_router/go_router.dart';
+
+import '../widgets/circet_widget.dart';
 
 class Defin1 extends StatefulWidget {
-  Defin1({Key? key}) : super(key: key);
+  const Defin1({Key? key}) : super(key: key);
 
   @override
   State<Defin1> createState() => _Defin1State();
@@ -25,13 +29,13 @@ class _Defin1State extends State<Defin1> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
             const SizedBox(
               height: 30,
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 500,
               child: PageView.builder(
@@ -65,68 +69,21 @@ class _Defin1State extends State<Defin1> {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 10,
-                  height: 10,
-                  decoration: BoxDecoration(
-                    color: index1 == 0 ? Colors.black : Colors.transparent,
-                    borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-                    border: Border.all(color: Colors.black),
-                  ),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Container(
-                  width: 10,
-                  height: 10,
-                  decoration: BoxDecoration(
-                    color: index1 == 0 ? Colors.black : Colors.transparent,
-                    borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-                    border: Border.all(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Container(
-                  width: 10,
-                  height: 10,
-                  decoration: BoxDecoration(
-                    color: index1 == 0 ? Colors.black : Colors.transparent,
-                    borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-                    border: Border.all(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            Circet(index1: index1),
             const SizedBox(
               height: 25,
             ),
             SizedBox(
-              width: 150,
-              child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    count++;
-                    prss();
-                  });
-                },
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.blue)),
-                child: const Text(
-                  "متابعة",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            )
+                width: 150,
+                child: CustomButton(
+                  text: "متابعة",
+                  onPressed: () {
+                    setState(() {
+                      context.go("/login");
+                    });
+                  },
+                  color: Colors.blue,
+                ))
           ],
         ),
       ),

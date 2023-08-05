@@ -1,5 +1,8 @@
-class Constant {
-  Constant._();
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-  static const  String kFeatuerdBox = 'featuerd_box';
+class Constant {
+  static const String kFeatuerdBox = 'featuerd_box';
+  static TextStyle style1 =
+      GoogleFonts.poppins(color: Colors.black, fontSize: 20);
 }
