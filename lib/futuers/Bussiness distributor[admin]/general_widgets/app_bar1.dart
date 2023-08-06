@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../core/utils/constant.dart';
 
-class AppBar1 extends StatelessWidget {
-  const AppBar1({
-    super.key, required this.titel,
+class TopBarApp1 extends StatelessWidget {
+  const TopBarApp1({
+    super.key,
+    required this.titel,
   });
 
   final String titel;
@@ -21,9 +22,12 @@ class AppBar1 extends StatelessWidget {
           ),
           Text(
             titel,
-            style: Constant.style1,
+            style: Constant.title,
           ),
-          const Icon(Icons.arrow_circle_right_rounded)
+          const Icon(
+            Icons.arrow_circle_right_rounded,
+            size: 30,
+          )
         ],
       ),
     );

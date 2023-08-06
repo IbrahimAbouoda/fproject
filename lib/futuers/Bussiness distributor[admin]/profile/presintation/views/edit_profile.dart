@@ -5,9 +5,14 @@ import 'package:fproject/futuers/widgets.dart';
 
 import '../widgets/listTil.dart';
 
-class EditProfile extends StatelessWidget {
+class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
 
+  @override
+  State<EditProfile> createState() => _EditProfileState();
+}
+
+class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +54,9 @@ class EditProfile extends StatelessWidget {
                 Column(
                   children: [
                     ListTileProfiles(
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {});
+                        },
                         iconData: Icons.settings,
                         titel: "الاعدادات"),
                     ListTileProfiles(
@@ -76,7 +83,7 @@ class EditProfile extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      BarApp(),
+                      ButtonAppBar1(),
                     ],
                   ),
                 ),

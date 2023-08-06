@@ -15,7 +15,7 @@ class NotifictionsApp extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const AppBar1(
+            const TopBarApp1(
               titel: "الاشعارات",
             ),
             const SizedBox(
@@ -32,7 +32,7 @@ class NotifictionsApp extends StatelessWidget {
                 },
               ),
             ),
-            const BarApp(),
+            const ButtonAppBar1(),
           ],
         ),
       ),

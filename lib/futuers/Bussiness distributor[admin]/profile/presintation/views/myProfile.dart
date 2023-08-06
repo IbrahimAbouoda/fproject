@@ -29,7 +29,7 @@ class MyProfil extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const AppBar1(
+                        const TopBarApp1(
                           titel: "الملف الشخصي",
                         ),
                         const SizedBox(
@@ -96,7 +96,7 @@ class MyProfil extends StatelessWidget {
                         const Expanded(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: [BarApp()],
+                            children: [ButtonAppBar1()],
                           ),
                         )
                       ],

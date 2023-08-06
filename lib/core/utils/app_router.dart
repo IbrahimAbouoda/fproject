@@ -1,5 +1,7 @@
 
 
+import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/list%20chating/presintation/views/chats.dart';
+import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/messaging/presintation/views/messaging.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/notifications/presintation/notifictions.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/profile/presintation/views/edit_profile.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/profile/presintation/views/myProfile.dart';
@@ -22,7 +24,7 @@ abstract class AppRouter {
     GoRoute(
         path: '/',
         builder: (context, state) {
-          return const NotifictionsApp();
+          return const Chats();
         }),
 
     GoRoute(
@@ -92,6 +94,16 @@ abstract class AppRouter {
         path: '/notifications',
         builder: (context, state) {
           return const NotifictionsApp();
+        }),
+    GoRoute(
+        path: '/chats',
+        builder: (context, state) {
+          return const Chats();
+        }),
+    GoRoute(
+        path: '/messageing',
+        builder: (context, state) {
+          return const Messaging();
         }),
   ]);
 }
