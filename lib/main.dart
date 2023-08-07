@@ -2,17 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/app_router.dart';
 import 'package:fproject/core/utils/constant.dart';
 import 'package:fproject/futuers/home/domin/entitis/product_entity.dart';
+import 'package:fproject/service/outh_service.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'firebase_options.dart';
 
 void main() async {
-  runApp(const MyApp());
-    WidgetsFlutterBinding.ensureInitialized();
- final appDocumentDirectory = await getApplicationDocumentsDirectory();
-  Hive.init(appDocumentDirectory.path);
+  WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize Firebase first
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+
+  // Now, you can set up other initializations
+  final appDocumentDirectory = await getApplicationDocumentsDirectory();
+  Hive.init(appDocumentDirectory.path);
   Hive.registerAdapter(ProductEntityAdapter());
-  await Hive.openBox(Constant.kFeatuerdBox);
+  await Hive.openBox(ConstantStayles.kFeatuerdBox);
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => AuthService(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +40,7 @@ class MyApp extends StatelessWidget {
       routerConfig: AppRouter.router,
       title: 'Flutter Demo',
       theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

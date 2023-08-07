@@ -1,70 +1,182 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/constant.dart';
-import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/general_widgets/buttonApp.dart';
+import 'package:go_router/go_router.dart';
 
-import '../widgets/card_message.dart';
-import '../widgets/top_bar_messging.dart';
+class ChatScreen extends StatefulWidget {
+  static const id = "/chat";
 
-class Messaging extends StatefulWidget {
-  const Messaging({super.key});
+  const ChatScreen({super.key});
 
   @override
-  State<Messaging> createState() => _MessagingState();
+  _ChatScreenState createState() => _ChatScreenState();
 }
 
-class _MessagingState extends State<Messaging> {
+class _ChatScreenState extends State<ChatScreen> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  late User user;
+  dynamic messages;
+
+  TextEditingController controller = TextEditingController();
+
+  void getCurrentUser() {
+    user = _auth.currentUser!;
+    print(user.email);
+  }
+
+  // getmessages() async {
+  //   messages = await _firestore.collection('messages').get();
+  //   setState(() {});
+  //   for (var item in messages.docs){
+  //     print(item['text']);
+  //   }
+  // }
+
+  @override
+  void initState() {
+    getCurrentUser();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 204, 211, 215),
       appBar: AppBar(
-        backgroundColor: Constant.kPrimColor,
-        title: const Icon(
-          Icons.menu,
-          color: Colors.white,
-        ),
-        actions: const [
-          actionBarMessg(),
+        leading: null,
+        actions: <Widget>[
+          IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () {
+                _auth.signOut();
+                context.go("/chats");
+                //Implement logout functionality
+              }),
         ],
+        title: const Text('⚡️Chat'),
+        backgroundColor: Colors.lightBlueAccent,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Expanded(
-                    child: ListView.builder(
-                        reverse: true,
-                        itemCount: 10,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return MessageBuble(
-                            messages: const ["hello"],
-                            sender: "ibrahim",
-                            index: index,
-                            isMe: false,
-                          );
-                        }));
-              },
-            ),
-          ),
-          Row(
-            children: [
-              Container(
-                width: 80,
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: const Text("ادخل الرسالة"),
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            StreamBuilder(
+                stream: _firestore
+                    .collection('messages')
+                    .orderBy('time', descending: true)
+                    .snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    List<dynamic> messages = snapshot.data!.docs;
+                    return Expanded(
+                        child: ListView.builder(
+                            reverse: true,
+                            itemCount: messages.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return MessageBuble(
+                                messages: messages,
+                                sender: user.email!,
+                                index: index,
+                                isMe: messages[index]['sender'] == user.email,
+                              );
+                            }));
+                  }
+                  return const Text('loading ...');
+                  // return  Expanded(
+                  //   child: ListView(
+                  //     padding: EdgeInsets.symmetric(horizontal: 16),
+                  //     children: [
+                  //       for (var item in messages.docs) ...{
+                  //         Text('${item['text']}',style:
+                  //         TextStyle(fontSize: 20),)}
+                  //     ],
+                  //   ),
+                  // );
+                }),
+            Container(
+              decoration: ConstantStayles.kMessageContainerDecoration,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Expanded(
+                    child: TextField(
+                      controller: controller,
+                      decoration: ConstantStayles.kMessageTextFieldDecoration,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      print(controller.text);
+                      _firestore.collection('messages').add({
+                        'text': controller.text,
+                        'sender': user.email,
+                        'time': DateTime.now()
+                      });
+                      controller.clear();
+                    },
+                    child: const Text(
+                      'Send',
+                      style:ConstantStayles.kSendButtonTextStyle,
+                    ),
+                  ),
+                ],
               ),
-             
-            ],
-          ),
-          const ButtonAppBar1(),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
-// ignore: camel_case_types
+class MessageBuble extends StatelessWidget {
+  const MessageBuble({
+    Key? key,
+    required this.messages,
+    required this.sender,
+    required this.index,
+    required this.isMe,
+  }) : super(key: key);
+
+  final List messages;
+  final String sender;
+  final int index;
+  final bool isMe;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment:
+            isMe ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+        children: [
+          Text('${messages[index]['sender']}'),
+          Material(
+              borderRadius: isMe
+                  ? const BorderRadius.only(bottomRight: Radius.circular(20))
+                  : const BorderRadius.only(bottomLeft: Radius.circular(20)),
+              color: isMe ? Colors.blue : Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "${messages[index]['text']}",
+                  style: const TextStyle(fontSize: 16, color: Colors.white),
+                ),
+              )),
+        ],
+      ),
+    );
+  }
+}

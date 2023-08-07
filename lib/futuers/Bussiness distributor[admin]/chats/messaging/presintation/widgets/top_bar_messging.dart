@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/app_images.dart';
 import '../../../../../../core/utils/constant.dart';
@@ -16,7 +16,7 @@ class actionBarMessg extends StatelessWidget {
       children: [
         Text(
           "Ibrahim",
-          style: Constant.style2,
+          style: ConstantStayles.style2,
         ),
         const SizedBox(
           width: 20,
@@ -27,11 +27,25 @@ class actionBarMessg extends StatelessWidget {
         const SizedBox(
           width: 20,
         ),
-        const Icon(
-          Icons.arrow_forward,
-          color: Colors.white,
-        ),
+        const IconButtonForword(),
       ],
+    );
+  }
+}
+
+class IconButtonForword extends StatelessWidget {
+  const IconButtonForword({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        context.go("/chats");
+      },
+      icon: const Icon(Icons.arrow_forward),
+      color: Colors.white,
     );
   }
 }

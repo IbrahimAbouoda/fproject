@@ -31,7 +31,7 @@ class _SpalahState extends State<Spalah> with SingleTickerProviderStateMixin {
     Timer(const Duration(seconds: 4), () {
       // Replace 'HomeScreen()' with the actual widget representing your home screen.
 
-      context.go('/define');
+      context.go('/login');
     });
   }
 

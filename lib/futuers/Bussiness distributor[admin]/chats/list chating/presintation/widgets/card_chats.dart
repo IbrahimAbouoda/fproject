@@ -21,11 +21,11 @@ class CardChats extends StatelessWidget {
             const Icon(Icons.safety_check),
             Text(
               "هل يوجد كميات كبيرة",
-              style: Constant.subTitle,
+              style: ConstantStayles.subTitle,
             ),
           ],
         ),
-        title: Text("Ibrahim", style: Constant.title),
+        title: Text("Ibrahim", style: ConstantStayles.title),
         trailing: const Text("11/19"),
       ),
       const Divider(

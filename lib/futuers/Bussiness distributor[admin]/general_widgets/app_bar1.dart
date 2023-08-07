@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/utils/constant.dart';
 
@@ -22,11 +23,14 @@ class TopBarApp1 extends StatelessWidget {
           ),
           Text(
             titel,
-            style: Constant.title,
+            style: ConstantStayles.title,
           ),
-          const Icon(
-            Icons.arrow_circle_right_rounded,
-            size: 30,
+          IconButton(
+            icon: const Icon(Icons.arrow_circle_right_rounded),
+            iconSize: 30,
+            onPressed: () {
+              context.go("menuD");
+            },
           )
         ],
       ),

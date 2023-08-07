@@ -1,36 +1,35 @@
-
-
+import 'package:fproject/components/drewer.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/list%20chating/presintation/views/chats.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/messaging/presintation/views/messaging.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/notifications/presintation/notifictions.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/profile/presintation/views/edit_profile.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/profile/presintation/views/myProfile.dart';
 import 'package:fproject/futuers/defineing/presintation/define1_screen.dart';
+import 'package:fproject/futuers/splash.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../futuers/Bussiness distributor[admin]/add products/add_produc_screen2.dart';
 import '../../futuers/Bussiness distributor[admin]/add products/add_product_screen1.dart';
 import '../../futuers/Bussiness distributor[admin]/add store/add_store_screen.dart';
 import '../../futuers/Bussiness distributor[admin]/home/presintation/views/home_distrbute_screen.dart';
 import '../../futuers/forgetPassword/presintation/views/forget_pass_screen.dart';
 import '../../futuers/home/presintation/views/home_screen.dart';
-import '../../futuers/joint/changePassword/presintation/views/change_pass_screen.dart';
-import '../../futuers/joint/login/presintation/views/login_screen.dart';
-import '../../futuers/signUp/presintation/views/signUp_screen.dart';
-import '../../futuers/splash.dart';
+import '../../service/Auth/changePassword/presintation/views/change_pass_screen.dart';
+import '../../service/Auth/login/models/login.dart';
+import '../../service/Auth/signUp/presintation/views/signUp_screen.dart';
+
 
 abstract class AppRouter {
   static final GoRouter router = GoRouter(routes: <RouteBase>[
     GoRoute(
         path: '/',
         builder: (context, state) {
-          return const Chats();
+          return const Spalah();
         }),
 
     GoRoute(
         path: '/login',
         builder: (context, state) {
-          return const Login();
+          return const LoginScreen();
         }),
     GoRoute(
         path: '/define',
@@ -40,7 +39,7 @@ abstract class AppRouter {
     GoRoute(
         path: '/signUp',
         builder: (context, state) {
-          return const SignUp();
+          return const RegistrationScreen();
         }),
     GoRoute(
         path: '/changePass',
@@ -53,13 +52,18 @@ abstract class AppRouter {
           return const Forget();
         }),
     GoRoute(
-        path: '/home',
+        path: '/homeUser',
         builder: (context, state) {
           return const HomeScreen();
         }),
 
     //----------------------------------
 
+ GoRoute(
+        path: '/homeAdmin',
+        builder: (context, state) {
+          return const HomeDist();
+        }),
     GoRoute(
         path: '/AddStore',
         builder: (context, state) {
@@ -103,7 +107,13 @@ abstract class AppRouter {
     GoRoute(
         path: '/messageing',
         builder: (context, state) {
-          return const Messaging();
+          return const ChatScreen();
+        }),
+        GoRoute(
+        path: '/menuD',
+        builder: (context, state) {
+          return const Drawer();
         }),
   ]);
+  
 }
