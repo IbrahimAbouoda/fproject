@@ -1,14 +1,13 @@
 import 'package:fproject/components/drewer.dart';
+import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/views/add_product_screen1.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/list%20chating/presintation/views/chats.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/messaging/presintation/views/messaging.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/notifications/presintation/notifictions.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/profile/presintation/views/edit_profile.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/profile/presintation/views/myProfile.dart';
 import 'package:fproject/futuers/defineing/presintation/define1_screen.dart';
-import 'package:fproject/futuers/splash.dart';
 import 'package:go_router/go_router.dart';
-import '../../futuers/Bussiness distributor[admin]/add products/add_produc_screen2.dart';
-import '../../futuers/Bussiness distributor[admin]/add products/add_product_screen1.dart';
+import '../../futuers/Bussiness distributor[admin]/add products/presintation/views/add_produc_screen2.dart';
 import '../../futuers/Bussiness distributor[admin]/add store/add_store_screen.dart';
 import '../../futuers/Bussiness distributor[admin]/home/presintation/views/home_distrbute_screen.dart';
 import '../../futuers/forgetPassword/presintation/views/forget_pass_screen.dart';
@@ -17,13 +16,12 @@ import '../../service/Auth/changePassword/presintation/views/change_pass_screen.
 import '../../service/Auth/login/models/login.dart';
 import '../../service/Auth/signUp/presintation/views/signUp_screen.dart';
 
-
 abstract class AppRouter {
   static final GoRouter router = GoRouter(routes: <RouteBase>[
     GoRoute(
         path: '/',
         builder: (context, state) {
-          return const Spalah();
+          return const AddProduct2();
         }),
 
     GoRoute(
@@ -59,7 +57,7 @@ abstract class AppRouter {
 
     //----------------------------------
 
- GoRoute(
+    GoRoute(
         path: '/homeAdmin',
         builder: (context, state) {
           return const HomeDist();
@@ -84,6 +82,7 @@ abstract class AppRouter {
         builder: (context, state) {
           return const AddProduct2();
         }),
+   
     GoRoute(
         path: '/editProfile',
         builder: (context, state) {
@@ -109,11 +108,10 @@ abstract class AppRouter {
         builder: (context, state) {
           return const ChatScreen();
         }),
-        GoRoute(
+    GoRoute(
         path: '/menuD',
         builder: (context, state) {
           return const Drawer();
         }),
   ]);
-  
 }

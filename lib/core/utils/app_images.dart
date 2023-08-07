@@ -38,4 +38,5 @@ class Assets {
   static const String imagesSignup = "assets/images/signup.png";
 
   static const String success = "assets/images/succ.png";
+  static const String camera = "assets/images/camera.png";
 }

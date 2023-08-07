@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/app_images.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/general_widgets/buttonApp.dart';
-import 'package:fproject/futuers/widgets.dart';
+import 'package:fproject/futuers/general_widgets.dart';
 
 import '../widgets/listTil.dart';
 

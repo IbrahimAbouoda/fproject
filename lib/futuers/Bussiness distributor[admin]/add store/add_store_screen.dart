@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/general_style.dart';
 
-import '../../widgets.dart';
+import '../../general_widgets.dart';
 
 class AddStore extends StatelessWidget {
   const AddStore({super.key});
