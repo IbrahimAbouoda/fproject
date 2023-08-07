@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1053059319205",
+    "project_id": "chat-f-project",
+    "storage_bucket": "chat-f-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053059319205:android:dc9d306b3e8fbee3bc944c",
+        "android_client_info": {
+          "package_name": "com.example.fproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053059319205-9pkmfvgi4umpcis35svd1kv9tdqo4bea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuFeLfcF0EgQ8kwnFyG4om8kNljHnB8L4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053059319205-9pkmfvgi4umpcis35svd1kv9tdqo4bea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
