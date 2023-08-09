@@ -52,10 +52,18 @@ class Drawer extends StatelessWidget {
       ),
       ListTile(
         leading: const Icon(Icons.help),
-        title: const Text('login'),
+        title: const Text('اضافة متجر '),
         onTap: () {
-          context.go("/login");
+          context.go("/AddStore");
           // Perform navigation to Help screen
+        },
+      ),
+      ListTile(
+        leading: const Icon(Icons.logout),
+        title: const Text(' اضافة منتج'),
+        onTap: () {
+          // Perform logout functionality
+          context.go("/AddProduct1");
         },
       ),
       ListTile(

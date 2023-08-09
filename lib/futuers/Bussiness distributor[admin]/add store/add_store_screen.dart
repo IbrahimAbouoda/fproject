@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fproject/core/utils/constant.dart';
 import 'package:fproject/core/utils/general_style.dart';
+import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/widgets/box_list_image.dart';
+import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/widgets/text_fiald.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../general_widgets.dart';
 
@@ -29,56 +33,24 @@ class AddStore extends StatelessWidget {
             const SizedBox(
               height: 7,
             ),
-            Container(
-              alignment: Alignment.center,
-              width: 150,
-              height: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color(0xffF3F3F3),
-              ),
-              child: const Text(
-                "صورة",
-                textAlign: TextAlign.center,
-              ),
-            ),
+            const BoxImageCont(hightBox: 150, widthBox: 150, radis: 30),
             const SizedBox(
               height: 15,
             ),
-            Container(
-              padding: const EdgeInsets.only(right: 10),
-              alignment: Alignment.centerRight,
-              width: 300,
-              height: 60,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color(0xffF3F3F3),
-              ),
-              child: const Text(
-                "اسم المتجر",
-                textAlign: TextAlign.right,
-              ),
-            ),
+            const TextFormProduct(maxline: 2, label: "اسم المتجر", width: 300),
             const SizedBox(
               height: 15,
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              alignment: Alignment.topRight,
-              width: 300,
-              height: 220,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color(0xffF3F3F3),
-              ),
-              child: const Text("الوصف"),
-            ),
+            const TextFormProduct(maxline: 8, label: "الوصف", width: 300),
             const SizedBox(
               height: 15,
             ),
-            const CustomButton(
+            CustomButton(
               text: "دخول",
-              color: Colors.blue,
+              onPressed: () {
+                context.go('/homeAdmin');
+              },
+              color: ConstantStayles.kPrimColor,
             )
           ],
         ),

@@ -69,6 +69,7 @@ class _AddProduct1State extends State<AddProduct1> {
             const TextFormProduct(
               maxline: 1,
               label: "اسم المنتج",
+              width: 300,
             ),
             const SizedBox(
               height: 15,
@@ -76,6 +77,7 @@ class _AddProduct1State extends State<AddProduct1> {
             const TextFormProduct(
               maxline: 3,
               label: "الوصف",
+              width: 300,
             ),
             const SizedBox(
               height: 50,

@@ -1,4 +1,5 @@
 import 'package:fproject/core/utils/app_images.dart';
+import 'package:fproject/core/utils/constant.dart';
 import 'package:go_router/go_router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -32,12 +33,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Colors.white,
       body: showSpinner
           ? const Center(
               child: CircularProgressIndicator(
-              color: Colors.blue,
+              color: ConstantStayles.kPrimColor,
             ))
           : Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -66,12 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: Colors.lightBlueAccent, width: 1.0),
+                            color: ConstantStayles.kPrimColor, width: 1.0),
                         borderRadius: BorderRadius.all(Radius.circular(32.0)),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: Colors.lightBlueAccent, width: 2.0),
+                            color: ConstantStayles.kPrimColor, width: 2.0),
                         borderRadius: BorderRadius.all(Radius.circular(32.0)),
                       ),
                     ),
@@ -93,12 +93,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: Colors.lightBlueAccent, width: 1.0),
+                            color: ConstantStayles.kPrimColor, width: 1.0),
                         borderRadius: BorderRadius.all(Radius.circular(32.0)),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: Colors.lightBlueAccent, width: 2.0),
+                            color: ConstantStayles.kPrimColor, width: 2.0),
                         borderRadius: BorderRadius.all(Radius.circular(32.0)),
                       ),
                     ),
@@ -109,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     child: Material(
-                      color: Colors.lightBlueAccent,
+                      color: ConstantStayles.kPrimColor,
                       borderRadius:
                           const BorderRadius.all(Radius.circular(30.0)),
                       elevation: 5.0,
@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 // ignore: use_build_context_synchronously
 
                                 // ignore: use_build_context_synchronously
-                                context.go("/chats");
+                                context.go("/AddStore");
                                 // ignore: use_build_context_synchronously
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
@@ -151,6 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 42.0,
                         child: const Text(
                           'Log In',
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
