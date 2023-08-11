@@ -34,7 +34,6 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
       );
 
       if (newUser.user != null) {
-        // ignore: use_build_context_synchronously
         context.go("/success");
         // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
