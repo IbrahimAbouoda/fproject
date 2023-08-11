@@ -71,7 +71,7 @@ class Drawer extends StatelessWidget {
         title: const Text('Logout'),
         onTap: () {
           // Perform logout functionality
-          Navigator.pop(context);
+          context.go("/login_signUp");
         },
       ),
     ]));

@@ -15,8 +15,6 @@ class _ButtonAppBar1State extends State<ButtonAppBar1> {
       height: 40,
       decoration: const BoxDecoration(
         color: Color(0xff27374D),
-        borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(15), bottomLeft: Radius.circular(15)),
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         InkWell(
@@ -42,7 +40,7 @@ class _ButtonAppBar1State extends State<ButtonAppBar1> {
             context.go("/homeAdmin");
           },
           child: const Icon(
-            Icons.not_interested,
+            Icons.shopping_bag_outlined,
             color: Colors.white,
           ),
         ),

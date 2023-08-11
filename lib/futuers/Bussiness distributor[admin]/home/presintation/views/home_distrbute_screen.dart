@@ -5,14 +5,14 @@ import 'package:go_router/go_router.dart';
 
 import '../widgets/box_list.dart';
 
-class HomeDist extends StatefulWidget {
-  const HomeDist({Key? key}) : super(key: key);
+class HomeAdmin extends StatefulWidget {
+  const HomeAdmin({Key? key}) : super(key: key);
 
   @override
-  State<HomeDist> createState() => _HomeDistState();
+  State<HomeAdmin> createState() => _HomeAdminState();
 }
 
-class _HomeDistState extends State<HomeDist> {
+class _HomeAdminState extends State<HomeAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +25,18 @@ class _HomeDistState extends State<HomeDist> {
               context.go("/menuD");
             },
             icon: const Icon(Icons.line_weight_sharp)),
-        actions: const [
+        actions: [
           Row(
-            children: [Icon(Icons.search_rounded), Icon(Icons.notifications)],
+            children: [
+              TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      suffixIcon: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.search_rounded)))),
+              const Icon(Icons.notifications)
+            ],
           )
         ],
       ),

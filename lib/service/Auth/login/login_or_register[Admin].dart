@@ -9,20 +9,20 @@ import 'package:fproject/service/outh_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginAdminScreen extends StatefulWidget {
   static const id = '/authScreen';
 
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginAdminScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginAdminScreen> createState() => _LoginAdminScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginAdminScreenState extends State<LoginAdminScreen> {
   Future<void> _signUp() async {
     try {
       final String email = _emailController.text.trim();
-      final String password = _passwordController.text;
+      final String password = _passwordController.text.trim();
 
       final newUser = await _auth.createUserWithEmailAndPassword(
         email: email,
@@ -191,10 +191,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                                           .signInWithEmailAndPassword(
                                                               email:
                                                                   _emailController
-                                                                      .text,
+                                                                      .text
+                                                                      .toString()
+                                                                      .trim(),
                                                               password:
                                                                   _passwordController
-                                                                      .text);
+                                                                      .text
+                                                                      .toString()
+                                                                      .trim());
                                                       // ignore: unnecessary_null_comparison
                                                       if (newUser != null) {
                                                         // ignore: use_build_context_synchronously
@@ -207,7 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                                 context)
                                                             .showSnackBar(SnackBar(
                                                                 content: Text(
-                                                                    "login user ${newUser.user!.email}")));
+                                                                    "login user ${newUser.user!.email.toString().trim()}")));
                                                       } else {
                                                         // ignore: use_build_context_synchronously
 
@@ -249,6 +253,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                     ),
+                                    Container(
+                                        alignment: Alignment.center,
+                                        child: Row(
+                                          children: [
+                                            InkWell(
+                                                onTap: () {
+                                                  context.go("/LoginUser");
+                                                },
+                                                child: const Text(
+                                                    "تسجيل ك صاحب محل"))
+                                          ],
+                                        ))
                                   ],
                                 ),
                               ),

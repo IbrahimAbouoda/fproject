@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/app_images.dart';
+import 'package:go_router/go_router.dart';
 
 class SuccessLogin extends StatelessWidget {
   const SuccessLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        context.go("/AddStore");
+      },
+    );
     return Scaffold(
       backgroundColor: const Color(0xff526D82),
       body: Center(

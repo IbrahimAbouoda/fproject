@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/app_router.dart';
 import 'package:fproject/core/utils/constant.dart';
-import 'package:fproject/futuers/home/domin/entitis/product_entity.dart';
 import 'package:fproject/service/outh_service.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
+import 'futuers/Bussiness distributor[admin]/home/domin/entitis/product_entity.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
