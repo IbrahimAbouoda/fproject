@@ -1,7 +1,9 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/app_router.dart';
 import 'package:fproject/core/utils/constant.dart';
 import 'package:fproject/service/outh_service.dart';
+import 'package:fproject/service/shared_preferences/shared_preferences.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,14 +16,21 @@ void main() async {
 
   // Initialize Firebase first
   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await SharedPrefController.init();
 
   // Now, you can set up other initializations
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
   Hive.registerAdapter(ProductEntityAdapter());
   await Hive.openBox(ConstantStayles.kFeatuerdBox);
+
+  FirebaseMessaging.instance.onTokenRefresh.listen((newToken) {
+    SharedPrefController.saveToken(newToken);
+
+    print('event onTokenRefresh is: $newToken');
+  });
 
   runApp(ChangeNotifierProvider(
     create: (context) => AuthService(),

@@ -1,7 +1,5 @@
 import 'package:fproject/components/derwer_user.dart';
 import 'package:fproject/components/drewer.dart';
-import 'package:fproject/futuers/Business%20shop%5Buser%5D/home/presintation/views/homeUser.dart';
-import 'package:fproject/futuers/Business%20shop%5Buser%5D/home/presintation/views/home_category.dart';
 import 'package:fproject/futuers/Business%20shop%5Buser%5D/products/details/presintion/views/details_product.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/views/add_product_screen1.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/list%20chating/presintation/views/chats.dart';
@@ -12,7 +10,6 @@ import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/profile/pres
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/requsts%20user/presintation/views/requst_user_screen.dart';
 import 'package:fproject/futuers/defineing/presintation/define1_screen.dart';
 import 'package:fproject/futuers/splash.dart';
-import 'package:fproject/service/Auth/login/login_or_regisetr%5Buser%5D.dart';
 import 'package:go_router/go_router.dart';
 import '../../futuers/Business shop[user]/products/details/presintion/views/car_pay_product.dart';
 import '../../futuers/Bussiness distributor[admin]/add products/presintation/views/add_produc_screen2.dart';
@@ -20,7 +17,7 @@ import '../../futuers/Bussiness distributor[admin]/add store/add_store_screen.da
 import '../../futuers/Bussiness distributor[admin]/home/presintation/views/home_distrbute_screen.dart';
 import '../../futuers/forgetPassword/presintation/views/forget_pass_screen.dart';
 import '../../service/Auth/changePassword/presintation/views/change_pass_screen.dart';
-import '../../service/Auth/login/login_or_register[Admin].dart';
+import '../../service/Auth/login/login_or_register.dart';
 import '../../service/Auth/login/success.dart';
 
 abstract class AppRouter {
@@ -41,11 +38,6 @@ abstract class AppRouter {
           return const DetailsProduct();
         }),
 
-    GoRoute(
-        path: '/LoginUser',
-        builder: (context, state) {
-          return const LoginUserScreen();
-        }),
     GoRoute(
         path: '/carPay',
         builder: (context, state) {
