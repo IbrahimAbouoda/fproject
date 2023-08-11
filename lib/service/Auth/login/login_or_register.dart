@@ -35,7 +35,6 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
 
       if (newUser.user != null) {
         context.go("/success");
-        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text("Regisiration user ${newUser.user!.email}")));
       } else {
