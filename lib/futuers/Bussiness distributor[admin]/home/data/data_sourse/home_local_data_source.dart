@@ -5,6 +5,7 @@ import '../../domin/entitis/product_entity.dart';
 
 abstract class HomeLocalDataSource {
   List<ProductEntity> fetchProducts();
+  List<ProductEntity> fetchNewProducts();
 }
 
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
@@ -12,5 +13,11 @@ class HomeLocalDataSourceImpl extends HomeLocalDataSource {
   List<ProductEntity> fetchProducts() {
     var box = Hive.box<ProductEntity>(ConstantStayles.kFeatuerdBox);
     return box.values.toList();
+  }
+  
+  @override
+  List<ProductEntity> fetchNewProducts() {
+    // TODO: implement fetchNewProducts
+    throw UnimplementedError();
   }
 }

@@ -18,9 +18,24 @@ class HomeRepoImpl extends HomeRepo {
       if (productList.isNotEmpty) {
         return right(productList.cast<ProductEntity>());
       }
-      var products = await homeLocalDataSource.fetchProducts();
+      var products = homeLocalDataSource.fetchProducts();
       return right(products);
-    } on Exception catch (e) {
+    } on Exception {
+      return left(CachFailuer());
+    }
+  }
+
+  @override
+  Future<Either<Failuer, List<ProductEntity>>> fetchFeaturedNewProduct() async {
+    try {
+      List<ProductEntity> products;
+      products = homeLocalDataSource.fetchProducts();
+      if (products.isNotEmpty) {
+        return right(products);
+      }
+      products = (await homeRemoteDataSource.fetchFeaturedNewProduct()).cast<ProductEntity>();
+      return right(products);
+    } on Exception {
       return left(CachFailuer());
     }
   }

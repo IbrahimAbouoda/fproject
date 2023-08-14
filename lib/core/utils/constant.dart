@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class ConstantStayles {
   static const Color kPrimColor = Color(0xff27374D);
   static const String kFeatuerdBox = 'featuerd_box';
+  static const String kNewBox = 'featuerd_new_box';
   static TextStyle style1 =
       GoogleFonts.poppins(color: Colors.black, fontSize: 15);
   static TextStyle style2 =
@@ -13,11 +14,11 @@ class ConstantStayles {
   static TextStyle subTitle = GoogleFonts.poppins(
       color: const Color.fromARGB(255, 61, 58, 58), fontSize: 15);
 
-      static  BoxDecoration kMessageContainerDecoration = const BoxDecoration(
-  border: Border(
-    top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-  ),
-);
+  static BoxDecoration kMessageContainerDecoration = const BoxDecoration(
+    border: Border(
+      top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+    ),
+  );
 
   static InputDecoration kMessageTextFieldDecoration = const InputDecoration(
     hintText: 'Enter your email',
@@ -36,8 +37,8 @@ class ConstantStayles {
   );
 
   static const kSendButtonTextStyle = TextStyle(
-  color: Colors.lightBlueAccent,
-  fontWeight: FontWeight.bold,
-  fontSize: 18.0,
-);
+    color: Colors.lightBlueAccent,
+    fontWeight: FontWeight.bold,
+    fontSize: 18.0,
+  );
 }

@@ -25,6 +25,7 @@ void main() async {
   Hive.init(appDocumentDirectory.path);
   Hive.registerAdapter(ProductEntityAdapter());
   await Hive.openBox(ConstantStayles.kFeatuerdBox);
+  await Hive.openBox(ConstantStayles.kNewBox);
 
   FirebaseMessaging.instance.onTokenRefresh.listen((newToken) {
     SharedPrefController.saveToken(newToken);
