@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/futuers/Business%20shop%5Buser%5D/general_widgets_user.dart/app_bar_user.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/general_widgets/app_bar1.dart';
 
 import '../../../../../../core/utils/app_images.dart';
@@ -12,10 +11,10 @@ class DetailsProduct extends StatelessWidget {
     return Scaffold(
         body: Column(
       children: [
-        Expanded(
+        const Expanded(
             flex: 1,
             child: Padding(
-              padding: const EdgeInsets.all(5),
+              padding: EdgeInsets.all(5),
               child: TopBarApp1(titel: "صفحة المنتج"),
             )),
         Expanded(
@@ -51,11 +50,11 @@ class DetailsProduct extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   alignment: Alignment.centerRight,
-                  child:  Column(
+                  child: Column(
                     children: [
                       Container(
                         alignment: Alignment.topRight,
-                        child: Text(
+                        child: const Text(
                           "قميص نص مشجر",
                           style: TextStyle(fontSize: 25),
                           textAlign: TextAlign.right,
@@ -63,14 +62,14 @@ class DetailsProduct extends StatelessWidget {
                       ),
                       Container(
                         alignment: Alignment.centerRight,
-                        child: Text(
+                        child: const Text(
                           "رجالي",
                           textAlign: TextAlign.right,
                         ),
                       ),
                       Container(
                         alignment: Alignment.bottomRight,
-                        child: Text(
+                        child: const Text(
                           "قميص نص كم مشجر خامة قطنية 100% مستورد من \n تركيا العدد محدود جدا ",
                           textAlign: TextAlign.right,
                         ),
@@ -80,21 +79,22 @@ class DetailsProduct extends StatelessWidget {
                 ))),
         Expanded(
             child: Container(
-              width: double.infinity,
+          width: double.infinity,
           alignment: Alignment.bottomRight,
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 alignment: Alignment.topRight,
-                child: Text(
+                child: const Text(
                   "الالوان المتوفرة",
-                  style: TextStyle(fontSize: 25),textAlign: TextAlign.right,
+                  style: TextStyle(fontSize: 25),
+                  textAlign: TextAlign.right,
                 ),
               ),
               Container(
                 alignment: Alignment.bottomRight,
-                child: Row(
+                child: const Row(
                   children: [
                     CircleAvatar(
                       radius: 15,
@@ -108,7 +108,8 @@ class DetailsProduct extends StatelessWidget {
                       radius: 15,
                       backgroundColor: Colors.black87,
                     ),
-                    CircleAvatar(radius: 15,
+                    CircleAvatar(
+                      radius: 15,
                       backgroundColor: Colors.deepOrange,
                     ),
                     CircleAvatar(

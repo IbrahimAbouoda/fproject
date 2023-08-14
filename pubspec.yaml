@@ -52,6 +52,7 @@ dependencies:
   
   provider: 
   cloud_firestore: ^4.8.4
+  bloc: ^8.1.2
 
 dev_dependencies:
   flutter_test:

@@ -5,6 +5,8 @@ class CarPayProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("car"),);
+    return const Center(
+      child: Text("car"),
+    );
   }
 }
