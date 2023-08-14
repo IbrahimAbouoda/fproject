@@ -1,5 +1,6 @@
 import 'package:fproject/components/derwer_user.dart';
 import 'package:fproject/components/drewer.dart';
+import 'package:fproject/futuers/Business%20shop%5Buser%5D/home/presintation/views/homeUser.dart';
 import 'package:fproject/futuers/Business%20shop%5Buser%5D/products/details/presintion/views/details_product.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/views/add_product_screen1.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/chats/list%20chating/presintation/views/chats.dart';
@@ -63,12 +64,16 @@ abstract class AppRouter {
         path: '/forget',
         builder: (context, state) {
           return const Forget();
+        }),GoRoute(
+        path: '/HomeUser',
+        builder: (context, state) {
+          return const HomeUser();
         }),
 
     //----------------------------------
 
     GoRoute(
-        path: '/homeAdmin',
+        path: '/HomeAdmin',
         builder: (context, state) {
           return const HomeAdmin();
         }),
