@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-class ButtonAppBar1 extends StatefulWidget {
-  const ButtonAppBar1({super.key});
+class ButtonAppBar1 extends StatelessWidget {
+  const ButtonAppBar1({
+    super.key,
+    required this.onTapHome,
+  });
+  final Function()? onTapHome;
 
-  @override
-  State<ButtonAppBar1> createState() => _ButtonAppBar1State();
-}
-
-class _ButtonAppBar1State extends State<ButtonAppBar1> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,36 +16,28 @@ class _ButtonAppBar1State extends State<ButtonAppBar1> {
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         InkWell(
-          onTap: () {
-            context.go("/homeAdmin");
-          },
+          onTap: onTapHome,
           child: const Icon(
             Icons.home,
             color: Colors.white,
           ),
         ),
         InkWell(
-          onTap: () {
-            context.go("/myProfile");
-          },
+          onTap: () => Navigator.pushNamed(context, "/myProfile"),
           child: const Icon(
             Icons.person_2,
             color: Colors.white,
           ),
         ),
         InkWell(
-          onTap: () {
-            context.go("/homeAdmin");
-          },
+          onTap: () => Navigator.pushNamed(context, "/showAdmins"),
           child: const Icon(
-            Icons.shopping_bag_outlined,
+            Icons.favorite,
             color: Colors.white,
           ),
         ),
         InkWell(
-            onTap: () {
-              context.go("/chats");
-            },
+            onTap: () => Navigator.pushNamed(context, "/chats"),
             child: const Icon(
               Icons.chat_sharp,
               color: Colors.white,

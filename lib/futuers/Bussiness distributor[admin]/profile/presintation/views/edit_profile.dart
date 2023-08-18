@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/app_images.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/general_widgets/buttonApp.dart';
 import 'package:fproject/futuers/general_widgets.dart';
+import 'package:go_router/go_router.dart';
 
 import '../widgets/listTil.dart';
 
@@ -79,11 +80,15 @@ class _EditProfileState extends State<EditProfile> {
                         titel: "تسجيل خروج"),
                   ],
                 ),
-                const Expanded(
+                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      ButtonAppBar1(),
+                      ButtonAppBar1(
+              
+      
+              onTapHome: () => Navigator.pushNamed(context, "/homeAdmin"),
+            ),
                     ],
                   ),
                 ),

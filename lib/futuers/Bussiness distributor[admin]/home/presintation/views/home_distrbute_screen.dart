@@ -1,66 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/core/utils/general_style.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/general_widgets/buttonApp.dart';
 import 'package:go_router/go_router.dart';
 
-import '../widgets/box_list.dart';
+import '../../../../Business shop[user]/general_widgets_user.dart/app_bar_user.dart';
 
-class HomeAdmin extends StatefulWidget {
-  const HomeAdmin({Key? key}) : super(key: key);
+class HomeAdmin extends StatelessWidget {
+  const HomeAdmin({super.key});
 
-  @override
-  State<HomeAdmin> createState() => _HomeAdminState();
-}
-
-class _HomeAdminState extends State<HomeAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        title: IconButton(
-            onPressed: () {
-              context.go("/menuD");
-            },
-            icon: const Icon(Icons.line_weight_sharp)),
-        actions: [
-          Row(
-            children: [
-              TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.search_rounded)))),
-              const Icon(Icons.notifications)
-            ],
-          )
-        ],
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80),
+        child: AppBarUserPages(
+          onPressed: () => Navigator.pushNamed(context, "/menuAdmin"),
+        ),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Text(
-            "المنتجات",
-            style: GeneralStyle.tiltelStyle,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
+      body: Column(
+        children: [
           Expanded(
-            flex: 1,
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return BoxContList();
-              },
-              itemCount: 15,
-            ),
-          ),
-          const ButtonAppBar1(),
-        ]),
+              flex: 10,
+              child: SizedBox(
+                  width: double.infinity,
+                  child: ListView.builder(
+                    itemBuilder: (context, index) => Container(
+                      margin: const EdgeInsets.all(5),
+                      child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text("51"),
+                            Text("51"),
+                            Text("فستان احمر"),
+                            CircleAvatar(
+                              backgroundColor: Colors.amber,
+                            ),
+                          ]),
+                    ),
+                  ))),
+          Expanded(
+              flex: 1,
+              child: Container(
+                child: ButtonAppBar1(
+                  onTapHome: () => Navigator.pushNamed(context, "/homeAdmin"),
+                ),
+              )),
+        ],
       ),
     );
   }

@@ -79,7 +79,7 @@ class _Defin1State extends State<Defin1> {
                   text: "متابعة",
                   onPressed: () {
                     setState(() {
-                      context.go("/login");
+                       Navigator.pushNamed(context, "/login");
                     });
                   },
                   color: Colors.blue,

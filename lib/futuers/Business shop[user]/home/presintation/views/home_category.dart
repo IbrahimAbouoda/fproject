@@ -12,29 +12,39 @@ class HomeCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(80),
-        child: AppBarUserPages(),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80),
+        child: AppBarUserPages(
+          onPressed: () => Navigator.pushNamed(context, "/menuUser"),
+        ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
           children: [
-            CategorisList(onTap: (){context.go("/details_product");}),
+            CategorisList(onTap: () {
+              Navigator.pushNamed(context, "/details_product");
+            }),
             Expanded(
                 flex: 6,
-                child: ListView(children: const [
-                  Expanded(
-                    flex: 3,
-                    child: NewListCategoris(title: "",),
-                  ),
-                  SizedBox(height: 10),
-                  Expanded(
-                    flex: 3,
-                    child: NewListCategoris(title: ""),
-                  ),
-                ],)),
-            ButtonAppBar1(),
+                child: ListView(
+                  children: const [
+                    Expanded(
+                      flex: 3,
+                      child: NewListCategoris(
+                        title: "",
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Expanded(
+                      flex: 3,
+                      child: NewListCategoris(title: ""),
+                    ),
+                  ],
+                )),
+            ButtonAppBar1(
+              onTapHome: () =>   Navigator.pushNamed(context, "/homeUser")
+            ),
           ],
         ),
       ),
@@ -44,7 +54,8 @@ class HomeCategory extends StatelessWidget {
 
 class NewListCategoris extends StatelessWidget {
   const NewListCategoris({
-    Key? key, required this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
   final String title;
   @override
@@ -53,23 +64,22 @@ class NewListCategoris extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.topRight,
-          child:  Text(title,style: TextStyle(fontSize: 20)),
+          child: Text(title, style: const TextStyle(fontSize: 20)),
         ),
         SizedBox(
             width: double.infinity,
             height: 300,
-            child:
-            ListView.builder(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return   Padding(
+                return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     height: 270,
                     width: 210,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Color(0xffD9D9D9),
+                      color: const Color(0xffD9D9D9),
                     ),
                     child: Column(
                       children: [
@@ -78,10 +88,7 @@ class NewListCategoris extends StatelessWidget {
                           color: Colors.grey,
                           height: 200,
                           child: Image.asset(
-
                             Assets.man1,
-
-
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -89,14 +96,29 @@ class NewListCategoris extends StatelessWidget {
                           padding: EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Text("بيجامة خامة قطن",style: TextStyle(fontSize: 20),),
-                              SizedBox(height: 15,),
+                              Text(
+                                "بيجامة خامة قطن",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Text("4.5",style: TextStyle(color: Colors.blue)),
-                                  Text("\$99.00",style: TextStyle(color: Colors.blue),),
-                                  Text("\$120.00",style: TextStyle(decoration: TextDecoration.lineThrough,color: Colors.red),),
+                                  Text("4.5",
+                                      style: TextStyle(color: Colors.blue)),
+                                  Text(
+                                    "\$99.00",
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                  Text(
+                                    "\$120.00",
+                                    style: TextStyle(
+                                        decoration: TextDecoration.lineThrough,
+                                        color: Colors.red),
+                                  ),
                                 ],
                               ),
                             ],
@@ -106,10 +128,9 @@ class NewListCategoris extends StatelessWidget {
                     ),
                   ),
                 );
-              },)
-        )],
+              },
+            ))
+      ],
     );
   }
 }
-
-

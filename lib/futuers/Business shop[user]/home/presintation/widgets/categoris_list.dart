@@ -1,13 +1,12 @@
-
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_images.dart';
 
 class CategorisList extends StatelessWidget {
   final Function()? onTap;
   const CategorisList({
-    super.key, this.onTap,
+    super.key,
+    this.onTap,
   });
 
   @override
@@ -31,11 +30,9 @@ class CategorisList extends StatelessWidget {
             Expanded(
               flex: 4,
               child: ListView.builder(
-
                 scrollDirection: Axis.horizontal,
                 itemCount: 5, // Update the itemCount accordingly
                 itemBuilder: (context, index) {
-
                   return GestureDetector(
                     onTap: onTap,
                     child: Padding(
@@ -47,13 +44,15 @@ class CategorisList extends StatelessWidget {
                             height: 80,
                             width: 80,
                           ),
-                          SizedBox(height: 5),
-                          Text("رجالي",style: TextStyle(fontSize: 15),),
+                          const SizedBox(height: 5),
+                          const Text(
+                            "رجالي",
+                            style: TextStyle(fontSize: 15),
+                          ),
                         ],
                       ),
                     ),
                   );
-
                 },
               ),
             ),

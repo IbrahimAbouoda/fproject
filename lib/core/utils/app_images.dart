@@ -46,4 +46,8 @@ class Assets {
   static const String man2_1 = "assets/images/man2_1.png";
   static const String man2_2 = "assets/images/man2_2.png";
   static const String man2_3 = "assets/images/man2_3.png";
+  static const String silver = "assets/images/silver.png";
+  static const String general = "assets/images/general.png";
+  static const String gold = "assets/images/gold.png";
+  static const String medal = "assets/images/medal.png";
 }

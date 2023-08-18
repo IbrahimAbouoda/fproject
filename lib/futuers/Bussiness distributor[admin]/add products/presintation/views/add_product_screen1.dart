@@ -5,14 +5,9 @@ import '../../../../general_widgets.dart';
 import '../widgets/box_list_image.dart';
 import '../widgets/text_fiald.dart';
 
-class AddProduct1 extends StatefulWidget {
+class AddProduct1 extends StatelessWidget {
   const AddProduct1({super.key});
 
-  @override
-  State<AddProduct1> createState() => _AddProduct1State();
-}
-
-class _AddProduct1State extends State<AddProduct1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +79,7 @@ class _AddProduct1State extends State<AddProduct1> {
             ),
             CustomButton(
               onPressed: () {
-                context.go("/AddProduct2");
+                Navigator.pushNamed(context, "/AddProduct1");
               },
               text: "متابعة",
               color: ConstantStayles.kPrimColor,

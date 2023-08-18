@@ -34,7 +34,7 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
       );
 
       if (newUser.user != null) {
-        context.go("/success");
+        Navigator.pushNamed(context, "/success");
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text("Regisiration user ${newUser.user!.email}")));
       } else {
@@ -223,46 +223,111 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
                                                         showProgress = true;
                                                       });
                                                       if (mounted) {
-                                                        if (_emailController.text.toString().trim().isNotEmpty &&
-                                                            _passwordController.text.toString().trim().isNotEmpty) {
+                                                        if (_emailController
+                                                                .text
+                                                                .toString()
+                                                                .trim()
+                                                                .isNotEmpty &&
+                                                            _passwordController
+                                                                .text
+                                                                .toString()
+                                                                .trim()
+                                                                .isNotEmpty) {
                                                           try {
-                                                            final userLogin = await FbAuthentication.loginWithEmailAndPassword(
-                                                              _emailController.text.toString().trim(),
-                                                              _passwordController.text.toString().trim(),
+                                                            final userLogin =
+                                                                await FbAuthentication
+                                                                    .loginWithEmailAndPassword(
+                                                              _emailController
+                                                                  .text
+                                                                  .toString()
+                                                                  .trim(),
+                                                              _passwordController
+                                                                  .text
+                                                                  .toString()
+                                                                  .trim(),
                                                             );
 
-                                                            if (userLogin.user != null) {
-                                                              UserModel? user = await FbAuthentication.getUserData(context, _emailController.text.toString().trim());
-                                                              if (user != null) {
-                                                                String? myTokenNow = SharedPrefController.getData(key: Keys.token.name);
-                                                                if (myTokenNow != null && user.token != myTokenNow) {
-                                                                  await FbAuthentication.updateUserToken(context, _emailController.text.trim(), myTokenNow);
-                                                                  user.token = myTokenNow;
+                                                            if (userLogin
+                                                                    .user !=
+                                                                null) {
+                                                              UserModel? user =
+                                                                  await FbAuthentication.getUserData(
+                                                                      context,
+                                                                      _emailController
+                                                                          .text
+                                                                          .toString()
+                                                                          .trim());
+                                                              if (user !=
+                                                                  null) {
+                                                                String?
+                                                                    myTokenNow =
+                                                                    SharedPrefController.getData(
+                                                                        key: Keys
+                                                                            .token
+                                                                            .name);
+                                                                if (myTokenNow !=
+                                                                        null &&
+                                                                    user.token !=
+                                                                        myTokenNow) {
+                                                                  await FbAuthentication.updateUserToken(
+                                                                      context,
+                                                                      _emailController
+                                                                          .text
+                                                                          .trim(),
+                                                                      myTokenNow);
+                                                                  user.token =
+                                                                      myTokenNow;
                                                                 }
-                                                                await SharedPrefController.setUserData(user);
+                                                                await SharedPrefController
+                                                                    .setUserData(
+                                                                        user);
 
-                                                                if (user.role == UserRole.admin.name) {
-                                                                  context.go("/homeAdmin");
-                                                                } else {
-                                                                  context.go("/homeUser");
-                                                                }
-                                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                                  SnackBar(content: Text("login user ${userLogin.user!.email.toString().trim()}")),
+                                                                if (user.role ==
+                                                                    UserRole
+                                                                        .admin
+                                                                        .name) {
+                                                                  // ignore: use_build_context_synchronously
+                                                                  Navigator.pushNamed(
+                                                                      context,
+                                                                      "/homeAdmin");
+                                                                } else {}
+                                                                Navigator.pushNamed(
+                                                                    context,
+                                                                    "/homeUser");
+                                                                ScaffoldMessenger.of(
+                                                                        context)
+                                                                    .showSnackBar(
+                                                                  SnackBar(
+                                                                      content: Text(
+                                                                          "login user ${userLogin.user!.email.toString().trim()}")),
                                                                 );
                                                               }
                                                             } else {
-                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                SnackBar(content: Text(userLogin.credential.toString())),
+                                                              ScaffoldMessenger
+                                                                      .of(context)
+                                                                  .showSnackBar(
+                                                                SnackBar(
+                                                                    content: Text(userLogin
+                                                                        .credential
+                                                                        .toString())),
                                                               );
                                                             }
                                                           } catch (e) {
-                                                            ScaffoldMessenger.of(context).showSnackBar(
-                                                              SnackBar(content: Text(e.toString())),
+                                                            ScaffoldMessenger
+                                                                    .of(context)
+                                                                .showSnackBar(
+                                                              SnackBar(
+                                                                  content: Text(
+                                                                      e.toString())),
                                                             );
                                                           }
                                                         } else {
-                                                          ScaffoldMessenger.of(context).showSnackBar(
-                                                            const SnackBar(content: Text("Email or password null")),
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(
+                                                            const SnackBar(
+                                                                content: Text(
+                                                                    "Email or password null")),
                                                           );
                                                         }
                                                       }
@@ -274,37 +339,78 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
                                                       setState(() {
                                                         showProgress = true;
                                                       });
-                                                      if (_formKey.currentState!.validate()) {
+                                                      if (_formKey.currentState!
+                                                          .validate()) {
                                                         try {
-                                                          FbAuthentication.signUpWithEmailAndPassword(
-                                                            _emailController.text.toString().trim(),
-                                                            _passwordController.text.toString().trim(),
+                                                          FbAuthentication
+                                                              .signUpWithEmailAndPassword(
+                                                            _emailController
+                                                                .text
+                                                                .toString()
+                                                                .trim(),
+                                                            _passwordController
+                                                                .text
+                                                                .toString()
+                                                                .trim(),
                                                           );
 
-                                                          String? myTokenNow = SharedPrefController.getData(key: Keys.token.name);
-                                                          UserModel user = UserModel(
-                                                            imageUrl: null, name: _nameController.text.trim(),
-                                                            email: _emailController.text.trim(),
+                                                          String? myTokenNow =
+                                                              SharedPrefController
+                                                                  .getData(
+                                                                      key: Keys
+                                                                          .token
+                                                                          .name);
+                                                          UserModel user =
+                                                              UserModel(
+                                                            imageUrl: null,
+                                                            name:
+                                                                _nameController
+                                                                    .text
+                                                                    .trim(),
+                                                            email:
+                                                                _emailController
+                                                                    .text
+                                                                    .trim(),
                                                             role: isAdmin
-                                                                ? UserRole.admin.name
-                                                                : UserRole.user.name,
+                                                                ? UserRole
+                                                                    .admin.name
+                                                                : UserRole
+                                                                    .user.name,
                                                             token: myTokenNow,
                                                           );
-                                                          bool isCreated = await FbAuthentication.addNewUser(context, user);
-                                                          if (isCreated && mounted) {
+                                                          bool isCreated =
+                                                              await FbAuthentication
+                                                                  .addNewUser(
+                                                                      context,
+                                                                      user);
+                                                          if (isCreated &&
+                                                              mounted) {
                                                             setState(() {
-                                                              showProgress = false;
+                                                              showProgress =
+                                                                  false;
                                                             });
-                                                            await SharedPrefController.setUserData(user);
-                                                            if(user.role == UserRole.admin.name) {
-                                                              context.go("/homeAdmin");
-                                                            }else{
-                                                              context.go("/homeUser");
+                                                            await SharedPrefController
+                                                                .setUserData(
+                                                                    user);
+                                                            if (user.role ==
+                                                                UserRole.admin
+                                                                    .name) {
+                                                              Navigator.pushNamed(
+                                                                  context,
+                                                                  "/homeAdmin");
+                                                            } else {
+                                                              Navigator.pushNamed(
+                                                                  context,
+                                                                  "/homeUser");
                                                             }
                                                           }
                                                         } catch (error) {
-                                                          ScaffoldMessenger.of(context).showSnackBar(
-                                                            SnackBar(content: Text(error.toString())),
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(
+                                                            SnackBar(
+                                                                content: Text(error
+                                                                    .toString())),
                                                           );
                                                         }
                                                       }

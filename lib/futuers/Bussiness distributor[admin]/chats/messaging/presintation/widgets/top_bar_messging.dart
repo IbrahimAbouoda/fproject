@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/app_images.dart';
 import '../../../../../../core/utils/constant.dart';
@@ -42,7 +41,7 @@ class IconButtonForword extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        context.go("/chats");
+        Navigator.pushNamed(context, "/chats");
       },
       icon: const Icon(Icons.arrow_forward),
       color: Colors.white,

@@ -3,7 +3,6 @@ import 'package:fproject/core/utils/constant.dart';
 import 'package:fproject/core/utils/general_style.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/widgets/box_list_image.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/widgets/text_fiald.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../general_widgets.dart';
 
@@ -48,7 +47,7 @@ class AddStore extends StatelessWidget {
             CustomButton(
               text: "دخول",
               onPressed: () {
-                context.go('/homeAdmin');
+                Navigator.pushNamed(context, "/homeAdmin");
               },
               color: ConstantStayles.kPrimColor,
             )

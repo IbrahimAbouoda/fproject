@@ -3,7 +3,6 @@ import 'package:fproject/core/utils/constant.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/add%20products/presintation/widgets/text_fiald.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/general_widgets/app_bar1.dart';
 import 'package:fproject/futuers/general_widgets.dart';
-import 'package:go_router/go_router.dart';
 
 class AddProduct2 extends StatelessWidget {
   const AddProduct2({super.key});
@@ -22,7 +21,9 @@ class AddProduct2 extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const TopBarApp1(titel: "اضافة منتج"),
+                const TopBarApp1(
+                  titel: "اضافة منتج",
+                ),
                 const SizedBox(
                   height: 70,
                 ),
@@ -105,7 +106,7 @@ class AddProduct2 extends StatelessWidget {
                 ),
                 CustomButton(
                     onPressed: () {
-                      context.go("/requst");
+                      Navigator.pushNamed(context, "/requst");
                     },
                     text: "متابعة",
                     color: ConstantStayles.kPrimColor)

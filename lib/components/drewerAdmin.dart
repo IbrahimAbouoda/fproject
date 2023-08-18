@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fproject/core/utils/app_images.dart';
+import 'package:fproject/core/utils/constant.dart';
 import 'package:go_router/go_router.dart';
 
-class Drawer extends StatelessWidget {
-  const Drawer({super.key});
+class DrwerAdmin extends StatelessWidget {
+  const DrwerAdmin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +12,20 @@ class Drawer extends StatelessWidget {
         body: ListView(children: [
       const DrawerHeader(
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: ConstantStayles.kPrimColor,
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           CircleAvatar(
-            radius: 30,
+            radius: 40,
             backgroundImage: AssetImage(Assets.imagesLogo),
+          ),
+          Text(
+            "Admin",
+            style: TextStyle(color: Colors.white),
+          ),
+          Text(
+            "Admin@gmail.com",
+            style: TextStyle(color: Colors.white),
           ),
         ]),
       ),
@@ -37,33 +46,48 @@ class Drawer extends StatelessWidget {
       ),
       ListTile(
         leading: const Icon(Icons.home),
-        title: const Text('Home'),
+        title: const Text('الرئيسية'),
         onTap: () {
           // Update the UI to refresh
-          context.go("/homeAdmin");
+            Navigator.pushNamed(context, "/homeAdmin");
         },
       ),
       ListTile(
-        leading: const Icon(Icons.settings),
-        title: const Text('profile'),
+        leading: const Icon(Icons.person_search_rounded),
+        title: const Text('الزبون'),
         onTap: () {
-          context.go("/myProfile");
+          // Update the UI to refresh
+             Navigator.pushNamed(context, "/showAdmins");
         },
       ),
       ListTile(
-        leading: const Icon(Icons.help),
+        leading: const Icon(Icons.man_4_outlined),
+        title: const Text('صفحتي'),
+        onTap: () {
+            Navigator.pushNamed(context, "/myProfile");
+        },
+      ),
+      ListTile(
+        leading: const Icon(Icons.redo_sharp),
+        title: const Text('طلبات المستخدمين'),
+        onTap: () {
+             Navigator.pushNamed(context, "/requstUser");
+        },
+      ),
+      ListTile(
+        leading: const Icon(Icons.store),
         title: const Text('اضافة متجر '),
         onTap: () {
-          context.go("/AddStore");
+             Navigator.pushNamed(context, "/AddStore");
           // Perform navigation to Help screen
         },
       ),
       ListTile(
-        leading: const Icon(Icons.logout),
+        leading: const Icon(Icons.add_shopping_cart_outlined),
         title: const Text(' اضافة منتج'),
         onTap: () {
           // Perform logout functionality
-          context.go("/AddProduct1");
+             Navigator.pushNamed(context, "/AddProduct");
         },
       ),
       ListTile(
@@ -71,7 +95,7 @@ class Drawer extends StatelessWidget {
         title: const Text('Logout'),
         onTap: () {
           // Perform logout functionality
-          context.go("/login_signUp");
+             Navigator.pushNamed(context, "/login_signUp");
         },
       ),
     ]));

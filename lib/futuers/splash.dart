@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class Spalah extends StatefulWidget {
   const Spalah({Key? key}) : super(key: key);
@@ -31,7 +30,7 @@ class _SpalahState extends State<Spalah> with SingleTickerProviderStateMixin {
     Timer(const Duration(seconds: 4), () {
       // Replace 'HomeScreen()' with the actual widget representing your home screen.
 
-      context.go('/LoginAdmin');
+      Navigator.pushNamed(context, "/login_signUp");
     });
   }
 

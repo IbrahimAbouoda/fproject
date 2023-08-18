@@ -58,7 +58,7 @@ class _ChatScreenState extends State<ChatScreen> {
               icon: const Icon(Icons.logout),
               onPressed: () {
                 _auth.signOut();
-                context.go("/chats");
+                  Navigator.pushNamed(context, "/chats");
                 //Implement logout functionality
               }),
         ],

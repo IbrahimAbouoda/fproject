@@ -8,8 +8,10 @@ import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'core/utils/routers.dart';
 import 'firebase_options.dart';
 import 'futuers/Bussiness distributor[admin]/home/domin/entitis/product_entity.dart';
+import 'futuers/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,15 +46,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routerConfig: AppRouter.router,
       title: 'Flutter Demo',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        
       ),
+      initialRoute: "/",
+     routes: routes,
     );
   }
 }

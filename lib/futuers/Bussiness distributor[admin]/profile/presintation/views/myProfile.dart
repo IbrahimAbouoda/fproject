@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fproject/futuers/Bussiness%20distributor%5Badmin%5D/general_widgets/buttonApp.dart';
 import 'package:fproject/futuers/general_widgets.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_images.dart';
 import '../../../general_widgets/app_bar1.dart';
@@ -93,10 +94,14 @@ class MyProfil extends StatelessWidget {
                         ),
                         const CustomButton(
                             text: "حفظ", color: Color(0xff27374D)),
-                        const Expanded(
+                        Expanded(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: [ButtonAppBar1()],
+                            children: [
+                              ButtonAppBar1(
+                                  onTapHome: () => Navigator.pushNamed(
+                                      context, "/homeAdmin")),
+                            ],
                           ),
                         )
                       ],

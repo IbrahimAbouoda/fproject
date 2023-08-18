@@ -32,7 +32,8 @@ class NotifictionsApp extends StatelessWidget {
                 },
               ),
             ),
-            const ButtonAppBar1(),
+            ButtonAppBar1(
+                onTapHome: () => Navigator.pushNamed(context, "/homeUser")),
           ],
         ),
       ),
