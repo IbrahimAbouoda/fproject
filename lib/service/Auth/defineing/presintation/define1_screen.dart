@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/futuers/general_widgets.dart';
+import 'package:fproject/fetures/general_widgets.dart';
 import 'package:go_router/go_router.dart';
 
 import '../widgets/circet_widget.dart';

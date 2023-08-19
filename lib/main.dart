@@ -1,6 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:fproject/core/utils/app_router.dart';
+
 import 'package:fproject/core/utils/constant.dart';
 import 'package:fproject/service/outh_service.dart';
 import 'package:fproject/service/shared_preferences/shared_preferences.dart';
@@ -10,8 +10,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'core/utils/routers.dart';
 import 'firebase_options.dart';
-import 'futuers/Bussiness distributor[admin]/home/domin/entitis/product_entity.dart';
-import 'futuers/splash.dart';
+import 'fetures/Bussiness distributor[admin]/home/domin/entitis/product_entity.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         
       ),
-      initialRoute: "/",
+      initialRoute: "/homeAdmin",
      routes: routes,
     );
   }

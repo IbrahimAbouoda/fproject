@@ -75,6 +75,13 @@ class DrwerAdmin extends StatelessWidget {
         },
       ),
       ListTile(
+        leading: const Icon(Icons.redo_sharp),
+        title: const Text('المشتريين'),
+        onTap: () {
+             Navigator.pushNamed(context, "/showUser");
+        },
+      ),
+      ListTile(
         leading: const Icon(Icons.store),
         title: const Text('اضافة متجر '),
         onTap: () {
