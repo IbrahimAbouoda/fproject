@@ -5,7 +5,18 @@ import 'package:provider/provider.dart';
 class AuthService extends ChangeNotifier  {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  
+  Future<User?> signUp(String email, String password) async {
+    try {
+      final UserCredential result = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return result.user;
+    } on FirebaseAuthException catch (error) {
+      throw Exception(error.code);
+    }
+  }
+
   Future<User?> signIn(String email, String password) async {
     try {
       final UserCredential result = await _auth.signInWithEmailAndPassword(

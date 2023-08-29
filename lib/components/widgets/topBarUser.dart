@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/core/utils/constant.dart';
+
+import '../../core/utils/constant.dart';
 
 class TopBarUser extends StatelessWidget {
   const TopBarUser({super.key});

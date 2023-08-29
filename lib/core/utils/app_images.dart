@@ -50,4 +50,5 @@ class Assets {
   static const String general = "assets/images/general.png";
   static const String gold = "assets/images/gold.png";
   static const String medal = "assets/images/medal.png";
+  static const String images = "assets/images/images.png";
 }

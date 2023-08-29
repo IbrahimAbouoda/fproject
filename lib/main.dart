@@ -1,16 +1,18 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-
-import 'package:fproject/core/utils/constant.dart';
-import 'package:fproject/service/outh_service.dart';
-import 'package:fproject/service/shared_preferences/shared_preferences.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+
+import 'core/shared_preferences/shared_preferences.dart';
+import 'core/utils/constant.dart';
 import 'core/utils/routers.dart';
 import 'firebase_options.dart';
-import 'fetures/Bussiness distributor[admin]/home/domin/entitis/product_entity.dart';
+import 'providers/products_provider.dart';
+import 'service/backend/product_service.dart';
 
 
 void main() async {
@@ -25,7 +27,7 @@ void main() async {
   // Now, you can set up other initializations
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
-  Hive.registerAdapter(ProductEntityAdapter());
+ 
   await Hive.openBox(ConstantStayles.kFeatuerdBox);
 
   FirebaseMessaging.instance.onTokenRefresh.listen((newToken) {
@@ -34,11 +36,24 @@ void main() async {
     print('event onTokenRefresh is: $newToken');
   });
 
-  runApp(ChangeNotifierProvider(
-    create: (context) => AuthService(),
-    child: const MyApp(),
-  ));
+
+
+  runApp(MultiProvider(providers: [
+  ChangeNotifierProvider<ProductProvider>(create: (context) => ProductProvider()),
+  ChangeNotifierProvider<ProductService>(create: (context) => ProductService()),
+  // ChangeNotifierProvider<UsersProvider>(
+  // create: (context) => UsersProvider()),
+  // ChangeNotifierProvider<CategoriesProvider>(
+  // create: (context) => CategoriesProvider()),
+  // ChangeNotifierProvider<MailsByTagsProvider>(
+  // create: (context) => MailsByTagsProvider()),
+  ],child: const MyApp()));
 }
+
+
+
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -53,10 +68,9 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        
       ),
-      initialRoute: "/homeAdmin",
-     routes: routes,
+      initialRoute: "/",
+      routes: routes,
     );
   }
 }

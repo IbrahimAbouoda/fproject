@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/core/utils/app_images.dart';
-import 'package:fproject/core/utils/constant.dart';
-import 'package:go_router/go_router.dart';
+
+import '../core/utils/app_images.dart';
+import '../core/utils/constant.dart';
 
 class DrwerAdmin extends StatelessWidget {
   const DrwerAdmin({super.key});
