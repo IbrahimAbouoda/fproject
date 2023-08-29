@@ -41,27 +41,26 @@ class CarPayProduct extends StatelessWidget {
         ),
         Expanded(
             flex: 2,
-            child: Container(
-              child: Row(children: [
-                Expanded(
-                    child: Container(
-                        alignment: Alignment.center,
-                        height: 50,
-                        margin: const EdgeInsets.all(8),
-                        color: Colors.blue,
-                        child: const Text("شراء الان"))),
-                Expanded(
-                    child: Container(
-                        alignment: Alignment.center,
-                        height: 50,
-                        margin: const EdgeInsets.all(8),
-                        color: Colors.blue,
-                        child: const Text("اجمالي المبلغ 600"))),
-              ]),
-            )),
+            child: Row(children: [
+              Expanded(
+                  child: Container(
+                      alignment: Alignment.center,
+                      height: 50,
+                      margin: const EdgeInsets.all(8),
+                      color: Colors.blue,
+                      child: const Text("شراء الان"))),
+              Expanded(
+                  child: Container(
+                      alignment: Alignment.center,
+                      height: 50,
+                      margin: const EdgeInsets.all(8),
+                      color: Colors.blue,
+                      child: const Text("اجمالي المبلغ 600"))),
+            ])),
         Expanded(
             flex: 1,
-            child: ButtonAppBar1(onTapHome: () => Navigator.pushNamed(context, "/homeUser")))
+            child: ButtonAppBar1(
+                onTapHome: () => Navigator.pushNamed(context, "/homeUser")))
       ]),
     );
   }

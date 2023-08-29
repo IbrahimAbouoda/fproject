@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+
 import '../../../core/shared_preferences/shared_preferences.dart';
 import '../../../core/utils/app_images.dart';
 import '../../../core/utils/constant.dart';
@@ -10,8 +12,6 @@ import 'models/user.dart';
 import 'widgets/animated_cross.dart';
 import 'widgets/auth_text_f.dart';
 import 'widgets/toggle_b.dart';
-
-
 
 class LoginAdminScreen extends StatefulWidget {
   static const id = '/authScreen';
@@ -131,7 +131,8 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
                                       vertical: 16, horizontal: 24),
                                   child: Form(
                                     key: _formKey,
-                                    child: Expanded(
+                                    
+                                  
                                       child: ListView(
                                         // mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -439,7 +440,7 @@ class _LoginAdminScreenState extends State<LoginAdminScreen> {
                                     ),
                                   ),
                                 ),
-                              )),
+                              ),
                             ],
                           ),
                         ),

@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../components/widgets/general_widgets/app_bar1.dart';
 import '../../../../../../core/utils/app_images.dart';
+import '../home/domain/details_product_oop.dart';
 
 class DetailsProduct extends StatelessWidget {
   const DetailsProduct({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final DetailsProductArguments args =
+        ModalRoute.of(context)!.settings.arguments as DetailsProductArguments;
     return Scaffold(
         body: Column(
       children: [
@@ -57,8 +60,8 @@ class DetailsProduct extends StatelessWidget {
                     children: [
                       Container(
                         alignment: Alignment.topRight,
-                        child: const Text(
-                          "قميص نص مشجر",
+                        child:  Text(
+                          args.name,
                           style: TextStyle(fontSize: 25),
                           textAlign: TextAlign.right,
                         ),

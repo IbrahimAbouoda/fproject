@@ -47,6 +47,7 @@ class CategoryService {
         body: json.encode(category),
       );
       if (response.statusCode == 201) {
+        // ignore: avoid_print
         print('Category posted successfully');
       } else {
         throw Exception("Failed to post category");

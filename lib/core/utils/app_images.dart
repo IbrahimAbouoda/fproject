@@ -51,4 +51,7 @@ class Assets {
   static const String gold = "assets/images/gold.png";
   static const String medal = "assets/images/medal.png";
   static const String images = "assets/images/images.png";
+  static const String children = "assets/images/children.png";
+  static const String harim = "assets/images/harim.png";
+  static const String manCategor = "assets/images/mansCategory.png";
 }

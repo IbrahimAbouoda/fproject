@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class AppBarUserPages extends StatelessWidget {
   const AppBarUserPages({
     super.key,
-    this.onPressed,
+    this.onPressed, this.onPressed_serch,
   });
   final Function()? onPressed;
-
+  final Function()? onPressed_serch;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -23,7 +23,7 @@ class AppBarUserPages extends StatelessWidget {
             decoration: InputDecoration(
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.search_rounded),
-                  onPressed: () {},
+                  onPressed: onPressed_serch,
                 ),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10))),

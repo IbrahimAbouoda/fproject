@@ -1,12 +1,10 @@
 
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
-
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../core/shared_preferences/shared_preferences.dart';
 import '../../models/stores_model.dart';
+// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
-
 class StoreService {
   final String apiUrl = "https://shop-smart.phoniexcode.com/api/stores";
   bool isPosting = true;
@@ -44,11 +42,13 @@ class StoreService {
       );
 
       if (response.statusCode == 201) {
+        
         print('Store posted successfully');
       } else {
         throw Exception('Failed to post store');
       }
     } catch (e) {
+     
       print('Error posting store: $e');
     } finally {
       isPosting = false; // Reset the flag after request completion

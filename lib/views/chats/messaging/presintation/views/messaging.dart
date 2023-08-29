@@ -27,25 +27,18 @@ class _ChatScreenState extends State<ChatScreen> {
     print(user.email);
   }
 
-  // getmessages() async {
-  //   messages = await _firestore.collection('messages').get();
-  //   setState(() {});
-  //   for (var item in messages.docs){
-  //     print(item['text']);
-  //   }
-  // }
-
+ 
   @override
   void initState() {
     getCurrentUser();
-    // TODO: implement initState
+    
     super.initState();
   }
 
   @override
   void dispose() {
     controller.dispose();
-    // TODO: implement dispose
+   
     super.dispose();
   }
 

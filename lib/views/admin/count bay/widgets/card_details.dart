@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/constant.dart';
@@ -40,13 +39,11 @@ class CardDetails extends StatelessWidget {
                             children: [
                               Text("المتبقي",
                                   style: TextStyle(color: Colors.white)),
-                              Text("500",
-                                  style: TextStyle(color: Colors.white))
+                              Text("500", style: TextStyle(color: Colors.white))
                             ],
                           ),
                           Container(
-                            margin:
-                                const EdgeInsets.symmetric(horizontal: 5),
+                            margin: const EdgeInsets.symmetric(horizontal: 5),
                             height: 40,
                             width: 2,
                             color: Colors.white,
@@ -55,8 +52,7 @@ class CardDetails extends StatelessWidget {
                             children: [
                               Text("المدفوع",
                                   style: TextStyle(color: Colors.white)),
-                              Text("200",
-                                  style: TextStyle(color: Colors.white))
+                              Text("200", style: TextStyle(color: Colors.white))
                             ],
                           ),
                         ],
@@ -68,12 +64,10 @@ class CardDetails extends StatelessWidget {
           const SizedBox(
             width: 4,
           ),
-          Expanded(
-            child: Container(
-              child: const LinearProgressIndicator(
-                color: Colors.blue,
-                value: 0.5,
-              ),
+          const Expanded(
+            child: LinearProgressIndicator(
+              color: Colors.blue,
+              value: 0.5,
             ),
           )
         ],

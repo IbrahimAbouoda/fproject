@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 abstract class GeneralStyle {
   static TextStyle tiltelStyle = GoogleFonts.cairo(
-      textStyle: TextStyle(fontSize: 25), fontWeight: FontWeight.w600);
+      textStyle: const TextStyle(fontSize: 25), fontWeight: FontWeight.w600);
   static const hintStyle = TextStyle(
     fontSize: 20,
   );

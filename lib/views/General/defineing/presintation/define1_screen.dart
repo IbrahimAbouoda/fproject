@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-
 import '../../../../components/general_widgets.dart';
 import '../widgets/circet_widget.dart';
-
 class Defin1 extends StatefulWidget {
   const Defin1({Key? key}) : super(key: key);
 

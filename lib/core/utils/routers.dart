@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
-
+import 'package:fproject/components/splash.dart';
 import '../../components/derwer_user.dart';
 import '../../components/drewerAdmin.dart';
-import '../../components/splash.dart';
 import '../../views/General/change_pass_screen.dart';
 import '../../views/General/defineing/presintation/define1_screen.dart';
 import '../../views/General/forget_pass_screen.dart';
@@ -15,6 +14,7 @@ import '../../views/admin/home/views/home_distrbute_screen.dart';
 import '../../views/admin/notoficatios/notifictions.dart';
 import '../../views/admin/profile/views/edit_profile.dart';
 import '../../views/admin/profile/views/myProfile.dart';
+import '../../views/admin/show users/list_show_user.dart';
 import '../../views/admin/user requsts/view/requst_list.dart';
 import '../../views/chats/list chating/presintation/views/chats.dart';
 import '../../views/chats/messaging/presintation/views/messaging.dart';
@@ -27,7 +27,7 @@ import '../../views/users/show all products/details_product.dart';
 
 
 Map<String, Widget Function(BuildContext)> routes = {
-  "/" : (context) => HomeUser(),
+  "/" : (context) =>   HomeAdmin(),
   "/homeAdmin": (context) =>  HomeAdmin(),
   "/AddStore": (context) => const AddStore(),
   "/AddProduct1": (context) => const AddProduct(),
@@ -38,19 +38,19 @@ Map<String, Widget Function(BuildContext)> routes = {
   "/messageing": (context) => const ChatScreen(),
   "/menuAdmin": (context) => const DrwerAdmin(),
   "/requstUser": (context) => const ListRequst(),
-  "/showAdmins": (context) =>  ShowAdmins(),
+  "/showUser": (context) =>  ShowUsers(),
   "/counterBay": (context) => const CounterBay(),
   "/success": (context) => const SuccessLogin(),
   //-----------------------------------------
   "/login_signUp": (context) => const LoginAdminScreen(),
   "/homeUser": (context) => const HomeUser(),
   "/homeCategory": (context) => const HomeCategory(),
-  "/showUser": (context) =>  ShowAdmins(),
-  "/menuUser": (context) => const DrewerUser(),
+  "/showAdmin": (context) =>  ShowAdmins(),
+  "/menuUser": (context) =>  DrewerUser(),
   "/details_product": (context) => const DetailsProduct(),
   "/carPay": (context) => const CarPayProduct(),
-
-  "/define": (context) => Defin1(),
+//-
+  "/define": (context) => const Defin1(),
   "/changePass": (context) => const ChangePass(),
   "/forget": (context) => const Forget()
 };

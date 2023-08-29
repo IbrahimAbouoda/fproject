@@ -24,7 +24,7 @@ class _ChangePassState extends State<ChangePass> {
                   children: [
                     TextFormField(
                       controller: pass,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white10)),
@@ -33,7 +33,7 @@ class _ChangePassState extends State<ChangePass> {
                     ),
                     TextFormField(
                       controller: pass,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white10)),
@@ -42,14 +42,14 @@ class _ChangePassState extends State<ChangePass> {
                     ),
                     TextFormField(
                       controller: pass,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         prefix: Icon(Icons.email_outlined, size: 20),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white10)),
                         hintText: "تاكيد كلمة المرور ",
                       ),
                     ),
-                    SizedBox(height: 100),
+                    const SizedBox(height: 100),
                     SizedBox(
                       width: 150,
                       child: TextButton(

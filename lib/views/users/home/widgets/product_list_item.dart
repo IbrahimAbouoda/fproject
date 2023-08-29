@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fproject/views/users/home/widgets/products_model.dart';
 
 import '../../../../core/utils/app_images.dart';
+import 'products_model.dart';
 
 
 

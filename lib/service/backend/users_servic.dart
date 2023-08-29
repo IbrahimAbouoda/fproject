@@ -46,6 +46,7 @@ class UserService {
   }
 
   Future<void> addUser(UsersModel user) async {
+    // ignore: unused_local_variable
     final response = await http.post(
       Uri.parse('$baseUrl/users'),
       headers: {

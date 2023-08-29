@@ -21,16 +21,14 @@ class ShowAdmins extends StatelessWidget {
             ),
             Expanded(
               flex: 1,
-              child: Container(
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    suffixIcon: IconButton(
-                      icon: const Icon(Icons.search_rounded),
-                      onPressed: () {},
-                    ),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.search_rounded),
+                    onPressed: () {},
                   ),
                 ),
               ),
@@ -53,8 +51,9 @@ class ShowAdmins extends StatelessWidget {
                         final user = snapshot.data![index];
                         return CardShowUserSels(
                           name: user.name,
-                          onPresseddelte: ()=>userService.deleteUser(index),
-                          onPressedAdd: ()=>Navigator.pushNamed(context, "/favori"),
+                          onPresseddelte: () => userService.deleteUser(index),
+                          onPressedAdd: () =>
+                              Navigator.pushNamed(context, "/favori"),
                         );
                       },
                     );

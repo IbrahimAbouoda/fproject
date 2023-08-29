@@ -1,14 +1,12 @@
-
 import 'package:flutter/material.dart';
+import 'package:html_unescape/html_unescape.dart';
 
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/constant.dart';
 import '../../../../models/stores_model.dart';
-import 'package:html_unescape/html_unescape.dart';
-
 import '../../../../service/backend/store_servic.dart';
 
-class CategorisList extends StatelessWidget {
+class ChoisListTager extends StatelessWidget {
   String removeHtmlTags(String htmlString) {
     final unescape = HtmlUnescape();
     String noHtml = unescape.convert(htmlString); // Decode HTML entities
@@ -16,19 +14,19 @@ class CategorisList extends StatelessWidget {
   }
 
   final Function()? onTap;
-  const CategorisList({
+  const ChoisListTager({
     super.key,
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    List nameCategoris = ["أطفالي", "حريمي", "رجالي"];
     List imageCategoris = [Assets.children, Assets.harim, Assets.manCategor];
-
     final StoreService storeService = StoreService();
     final Future<List<StoreModel>> storis = storeService.getStores();
     return SizedBox(
-      height: 150,
+      height: 170,
       width: double.infinity,
       child: Column(
         children: [
@@ -38,7 +36,7 @@ class CategorisList extends StatelessWidget {
             child: const Expanded(
               flex: 1,
               child: Text(
-                "اختر التاجر",
+                "اختر القسم",
                 style: TextStyle(fontSize: 25),
               ),
             ),
@@ -55,13 +53,13 @@ class CategorisList extends StatelessWidget {
                 } else if (snapshot.hasData) {
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: snapshot.data!.length,
+                    itemCount: imageCategoris.length,
                     itemBuilder: (context, index) {
                       StoreModel store = snapshot.data![index];
                       String note = removeHtmlTags(store.notes);
-                      return CardStoreis(
-                        notes: note,
-                        name: store.name,
+                      return CardChoisNameTager(
+                        name: nameCategoris[index],
+                        image: imageCategoris[index],
                         onTap: () =>
                             Navigator.pushNamed(context, "/homeCategory"),
                       );
@@ -79,18 +77,19 @@ class CategorisList extends StatelessWidget {
   }
 }
 
-class CardStoreis extends StatelessWidget {
-  const CardStoreis({
+class CardChoisNameTager extends StatelessWidget {
+  const CardChoisNameTager({
     super.key,
     required this.onTap,
     required this.name,
-    required this.notes,
+    required this.image,
   });
 
   final Function()? onTap;
 
   final String name;
-  final String notes;
+
+  final String image;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -98,19 +97,18 @@ class CardStoreis extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              border: Border.all(
-                   color: ConstantStayles.kPrimColor)),
           padding: const EdgeInsets.all(5),
           child: Column(
             children: [
-              const Icon(Icons.store),
+              Image.asset(
+                image,
+                width: 100,
+                height: 80,
+              ),
               Text(
                 name,
                 style: ConstantStayles.style1,
               ),
-              Text(notes)
             ],
           ),
         ),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../../components/general_widgets.dart';
 import '../../../core/utils/constant.dart';
 import '../../../core/utils/general_style.dart';
@@ -31,9 +29,10 @@ class _AddStoreState extends State<AddStore> {
   @override
   Widget build(BuildContext context) {
 
+   // ignore: unused_element
    addStore(int id,String name,String notes,String status,String image)async{
      StoreModel newStore = StoreModel(
-       id: id ?? 0, // You might not need to specify the ID for a new store
+       id: id, // You might not need to specify the ID for a new store
        name:"ahmed",
        slug: "new-store",
        notes: "notes ahmed",
